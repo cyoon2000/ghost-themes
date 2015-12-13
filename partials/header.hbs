@@ -1,0 +1,13 @@
+<div class="wrapper">
+	{{#if @blog.navigation}}
+		{{navigation}}
+	{{/if}}
+
+	{{#if @blog.logo}}
+		<a href="{{@blog.url}}">
+		    <img class="blog-logo" src="{{@blog.logo}}" alt="{{@blog.title}}" />
+		</a>
+	{{else}}
+		<h2 class="blog-title"><a href="{{@blog.url}}">{{@blog.title}}</a></h2>
+	{{/if}}
+</div>

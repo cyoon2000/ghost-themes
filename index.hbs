@@ -1,0 +1,28 @@
+{{!< default}}
+
+{{! This is the home page template. It loops though all your posts and displays them. }}
+    
+    {{> "cover-photo"}}
+
+    <div class="wrapper posts clearfix" id="posts">   
+        {{#foreach posts}}
+        <div class="{{post_class}}">
+            <a href="{{url}}">                
+                <div class="featured-image" {{#if image}} style="background-image:url({{image}})" {{else}} style="height: 40px; padding-top: 8%" {{/if}}></div>
+                <section class="post-excerpt">
+                    {{#author}}
+                        <div class="post-author" style="background-image: url({{image}})"></div>
+                    {{/author}}
+                    <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM D"}}</time>              
+                    <h2 class="post-title">
+                        {{#if tags}}<span class="post-tags">{{tags separator=" & " autolink="false"}}:</span> {{/if}}
+                        {{{title}}}
+                    </h2>
+                </section> 
+            </a>
+        </div>  
+        {{/foreach}}
+    </div>
+    
+    {{!! Pagination links }}
+    {{pagination}}

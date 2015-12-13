@@ -1,0 +1,476 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {	
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;	
+}
+
+a {
+    color: #0069d6;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+}
+code {
+    background-color: #fee9cc;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #fff;
+    color:#737373;
+    font-size: 11px;
+    padding: 0;
+}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style>
+<title>Exo Documentation</title>
+
+</head>
+<body>
+<h1>Exo Documentation</h1>
+
+<p>Thanks for purchasing Exo, a clean and modern theme for Ghost. Exo was built for multi-user and post cover images in mind.</p>
+
+<p>For more premium Ghost themes visit <a href="http://voltthemes.com/">VoltThemes.com</a> and <a href="https://twitter.com/VoltThemes">follow us on Twitter</a>!</p>
+
+<h2>Table of Contents</h2>
+
+<ol>
+<li>Getting Started</li>
+<li>Installation</li>
+<li>Upgrading</li>
+<li>Settings</li>
+<li>Customization</li>
+<li>Support</li>
+<li>Version History</li>
+<li>Credits</li>
+</ol>
+
+
+<h2>1 . Getting Started</h2>
+
+<p>For the purposes of this documentation, it is assumed that you have Ghost up and running. If not, please visit <a href="http://support.ghost.org/">support.ghost.org</a> and follow the guide to install and configure Ghost.</p>
+
+<p>Please make sure you are running the <a href="https://ghost.org/download/">latest version of Ghost</a> before installing &amp; using Exo.</p>
+
+<h2>2. Installation</h2>
+
+<ol>
+<li>Navigate to the directory on your server where Ghost is installed.</li>
+<li>Once there, navigate to the /content/themes/ directory.</li>
+<li>Upload the theme files to this directory.</li>
+<li>Restart Ghost.</li>
+<li>Log into your Ghost Admin.</li>
+<li>Navigate to Settings > General and select Exo in the theme options dropdown menu.</li>
+<li>Click 'Save'.</li>
+</ol>
+
+
+<p><strong>Note:</strong> Once you update your theme, you will want to restore your changes to the <code>theme-options.js</code> file.</p>
+
+<h2>3. Upgrading</h2>
+
+<p>If you have made any changes to Exo's template or SCSS/CSS files, you will need to re-integrate your custom theme changes.</p>
+
+<p><strong>Always perform a backup of the theme files before upgrading</strong></p>
+
+<ol>
+<li>Download the latest version of Exo from your <a href="http://themeforest.net/downloads">downloads page</a> on ThemeForest.</li>
+<li>Navigate to the folder on your server where Ghost is installed.</li>
+<li>Once there, navigate to the /content/themes/ folder.</li>
+<li>Upload and replace all of the older theme files with the newer ones.</li>
+</ol>
+
+
+<p>Once you update your theme, you will want to restore your changes to the <code>custom.css</code> &amp; <code>theme-options.js</code> files.</p>
+
+<h2>4. Settings</h2>
+
+<p>In Settings > General several options will alter the content in Exo:</p>
+
+<ul>
+<li><strong>Blog Logo</strong> - Appears as the first item the header. We recommend a <strong>maximum size</strong> of 240 × 30 pixels.</li>
+<li><strong>Blog Title</strong> - The blog title will be displayed if no blog logo has been uploaded.</li>
+<li><strong>Blog Description</strong> - Appears as centered text in the cover photo.</li>
+<li><strong>Blog Cover</strong> - This will appear underneath the header.</li>
+<li><strong>Posts per page</strong> - This is how many posts are displayed per page. We recommend setting this to an <strong>odd number</strong> for Exo to display an equal number of items per page.</li>
+</ul>
+
+
+<h2>5. Customization</h2>
+
+<p>If you're comfortable with HTML &amp; CSS, you can make any changes to the theme by editing Exo's template files.</p>
+
+<p><strong>Please be aware that when Exo is updated in the future, you will need to re-integrate your custom theme changes.</strong></p>
+
+<p>The CSS files were created using <a href="http://sass-lang.com/guide">SASS</a>. If you are familiar with SASS, you can easily customize Exo.</p>
+
+<h4>Using CSS</h4>
+
+<p>You can add your own custom CSS by <a href="http://support.ghost.org/use-code-injection/">using the Code Injection</a> feature in Ghost.</p>
+
+<p>If you have existing CSS in a <code>custom.css</code> stylesheet, you can cut &amp; paste your CSS into the <strong>Blog Header</strong> using <a href="http://support.ghost.org/use-code-injection/">Code Injection</a>.</p>
+
+<p><strong>Note:</strong> Don't forget to wrap your all your CSS in <code>&lt;style&gt;</code> tags.</p>
+
+<h4>Using SASS</h4>
+
+<p>You will find the following SCSS files in /assets/scss/ directory:</p>
+
+<ul>
+<li><strong>screen.scss</strong> - This is the main CSS stylesheet. It imports the mixins.scss and variables.scss files.</li>
+<li><strong>mixins.scss</strong> - This contains all the CSS declarations that Exo reuses throughout the theme.</li>
+<li><strong>variables.scss</strong> - This contains all the variables that you can tweak to customize the way Exo looks.</li>
+<li><strong>normalize.scss</strong> - This contains Normalize.css, which is a customisable CSS file that makes browsers render all elements more consistently and in line with modern standards.</li>
+<li><strong>responsive-nav.scss</strong> - This contains the necessary CSS for the responsive navigation.</li>
+<li><strong>fluidbox.scss</strong> - This contains the necessary CSS for the image lightbox.</li>
+</ul>
+
+
+<p><strong>Note</strong>: You will need a SASS preprocessor, such as <a href="http://gruntjs.com/">Grunt</a> to use the SCSS files.</p>
+
+<h4>Navigation</h4>
+
+<p>You can customize the navigation menu by using the Navigation builder in your Ghost admin area.</p>
+
+<ol>
+<li>Click Settings in your Ghost admin area.</li>
+<li>Click Navigation from the menu on the left.</li>
+<li>Add, remove and/or reorder navigation items on the right.</li>
+<li>Click save.</li>
+</ol>
+
+
+<h4>Social Media</h4>
+
+<p>Add your own social media links to the header by editing the <code>theme-options.hbs</code> file located in the partials > js folder.</p>
+
+<ol>
+<li>Navigate to the partials > js folder on your server.</li>
+<li>Open the <code>theme-options.js</code> file in your favorite text editor.</li>
+<li>Find the Social Media section</li>
+<li><p>Add your social media links (between the quotation marks) to the corresponding social media variables.</p>
+
+<p> <strong>Facebook Example:</strong></p>
+
+<pre><code> var facebook_link = "http://www.facebook.com/my_facebook_username";
+</code></pre>
+
+<p> <strong>Email Example:</strong></p>
+
+<pre><code> var email_link = "mailto:youremail@gmail.com";
+</code></pre></li>
+<li><p>Upload the changed <code>theme-options.js</code> file to the partials > js folder.</p></li>
+</ol>
+
+
+<p><strong>Note:</strong> If you don't want a specific social media icon to appear, just leave variable blank.</p>
+
+<pre><code>var facebook_link = "";
+</code></pre>
+
+<p><strong>Note:</strong> If you wish to show RSS icon, change the <code>rss_link</code> value to <code>true</code>.</p>
+
+<pre><code>var rss_link = true;
+</code></pre>
+
+<h4>Favicon</h4>
+
+<p>You can add you own custom Favicon to your blog by replacing the <code>favicon.ico</code> file located in the assets directory:</p>
+
+<ol>
+<li>Navigate to the assets directory on your server.</li>
+<li>Replace the favicon.ico file with your own custom icon.</li>
+</ol>
+
+
+<h4>Post Cover Images</h4>
+
+<p>You can add a post cover image to your posts by adding one in the post settings. This post cover image will be displayed along with the title of the post on the homepage and in the post itself.</p>
+
+<ol>
+<li>Login to the Ghost Admin</li>
+<li>Create or edit a post.</li>
+<li>Click the post settings icon, this is located next to the publish/update post button.</li>
+<li>Click "Add post image.</li>
+<li>Save/update the post.</li>
+</ol>
+
+
+<h4>Comments</h4>
+
+<p>You can enable Disqus comments on your blog by adding your <a href="https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname">Disqus shortname</a> to the <code>theme-options.js</code> file located in the assets > js folder:</p>
+
+<ol>
+<li><a href="http://disqus.com/register">Add your site</a> to your Disqus account and setup a unique Disqus URL. The unique <strong>shortname</strong> you pick for your Disqus URL will be important to remember!</li>
+<li>Navigate to the assets > js folder on your server.</li>
+<li><p>Open the <code>theme-options.js</code> file and add your unique <a href="https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname">shortname</a> to the <code>disqus</code> variable.</p>
+
+<p> <strong>Example:</strong></p>
+
+<pre><code> var disqus = "DISQUS_SHORTNAME_HERE";
+</code></pre></li>
+<li><p>Save/update the <code>theme-options.js</code> file.</p></li>
+</ol>
+
+
+<p><strong>Note</strong>: If you don't want comments on your blog just leave the <code>disqus</code> variable blank.</p>
+
+<pre><code>var disqus = ""; 
+</code></pre>
+
+<h4>Image Lightbox</h4>
+
+<p>By default Exo will <strong>automatically</strong> add an image lightbox to all images within a post. You can disable the automatic image lightbox by editing the <code>theme-options.js</code> file located in the partials > js folder.</p>
+
+<ol>
+<li>Navigate to the partials > js folder on your server.</li>
+<li>Open the <code>theme-options.js</code> file in your favorite text editor.</li>
+<li><p>Find the <code>lightbox</code> variable and change the value from <code>true</code> to <code>false</code>.</p>
+
+<p> <strong>Example:</strong></p>
+
+<pre><code> var lightbox = false;
+</code></pre></li>
+<li><p>Upload the changed <code>theme-options.js</code> file to the partials > js folder.</p></li>
+</ol>
+
+
+<p><strong>Note:</strong> If you wish to enable the automatic image lightbox again just change the <code>false</code> value to <code>true</code>.</p>
+
+<pre><code>var lightbox = true;
+</code></pre>
+
+<h4>Infinite Scroll</h4>
+
+<p>By default infinite scroll will be disabled. You can enable infinite scroll by editing the <code>theme-options.js</code> file located in the partials > js folder.</p>
+
+<ol>
+<li>Navigate to the partials > js folder on your server.</li>
+<li>Open the <code>theme-options.js</code> file in your favorite text editor.</li>
+<li><p>Find the <code>lightbox</code> variable and insert the text (between the quotation marks) <code>scroll</code> or <code>click</code>. Here are the differences between the two options:</p>
+
+<p> <strong>Scroll will load new posts while scrolling:</strong></p>
+
+<pre><code> var infinite_scroll = "scroll";
+</code></pre>
+
+<p> <strong>Click will load new posts with a click of a button:</strong></p>
+
+<pre><code> var infinite_scroll = "click";
+</code></pre></li>
+<li><p>Upload the changed <code>theme-options.js</code> file to the partials > js folder.</p></li>
+</ol>
+
+
+<p><strong>Note:</strong> If you wish to disable infinite scroll just leave the <code>infinite_scroll</code> variable blank.</p>
+
+<pre><code>var infinite_scroll = "";   
+</code></pre>
+
+<h2>6. Support</h2>
+
+<p>Support for this theme will be provided on ThemeForest via this item's comments and via messages to the author.</p>
+
+<p>Support for my items includes:</p>
+
+<ul>
+<li>Responding to questions or problems regarding the item and its features</li>
+<li>Fixing bugs and reported issues</li>
+<li>Providing updates to ensure compatibility with new software versions</li>
+</ul>
+
+
+<p>Item support does not include:</p>
+
+<ul>
+<li>Customization and installation services</li>
+<li>Support for third party software and plug-ins</li>
+</ul>
+
+
+<h2>7. Version History</h2>
+
+<h4>2015.06.13 - v1.1.2</h4>
+
+<ul>
+<li>Conditionally <a href="http://dev.ghost.org/no-more-jquery/">load jQuery</a> if it doesn't exist already.</li>
+<li>Removed the <code>custom.css</code> stylesheet, users can use <a href="http://support.ghost.org/use-code-injection/">Code Injection</a> instead.</li>
+<li>Updated documentation to reflect changes.</li>
+</ul>
+
+
+<h4>2015.03.11 - v1.1.1</h4>
+
+<ul>
+<li>Bug fixes.</li>
+</ul>
+
+
+<h4>2015.03.1 - v1.1.0</h4>
+
+<ul>
+<li>Added navigation feature (new in Ghost 0.5.9).</li>
+<li>Added tag image &amp; description to the tag pages.</li>
+<li>Updated documentation for navigation feature.</li>
+</ul>
+
+
+<h4>2015.01.2 - v1.0.1</h4>
+
+<ul>
+<li>Fixed cover photo bug on iOS.</li>
+<li>Added ellipsis to long post titles on homepage.</li>
+<li>Updated footer.</li>
+</ul>
+
+
+<h4>2014.10.1 - v1.0</h4>
+
+<ul>
+<li>Initial Release</li>
+</ul>
+
+
+<h2>8. Credits</h2>
+
+<ul>
+<li><a href="http://modernizr.com/">Modernizr</a></li>
+<li><a href="http://fitvidsjs.com/">FitVids.JS</a></li>
+<li><a href="https://www.google.com/fonts">Google Fonts</a></li>
+<li><a href="http://www.responsive-nav.com">Responsive Nav</a></li>
+<li><a href="http://terrymun.github.io/Fluidbox/">Fluid Box</a></li>
+<li><a href="https://github.com/teamdf/jquery-visible">jquery.visible.js</a></li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+{{!< default}}
+
+{{! This is a author page template. It displays posts from a paticular author }}
+
+{{#author}}
+    {{#if cover}}
+        <header class="page-cover-photo" style="background-image: url({{cover}})">
+            {{#if bio}}
+            <div class="vertical">
+                <h2>{{bio}}</h2>
+            </div>
+            {{/if}}
+        </header>
+    {{/if}}
+
+    {{#if cover}}
+    <div class="wrapper page-meta" style="margin-top: -50px;">
+    {{else}}
+    <div class="wrapper page-meta">
+    {{/if}}
+        <div class="author-image" style="background-image: url({{image}})"></div>
+        <h1>{{name}}</h1>
+        <h3>
+            {{#if location}} {{location}} {{/if}} 
+            {{#if website}} | <a href="{{website}}">{{website}}</a> {{/if}} 
+        </h3>
+    </div>
+{{/author}}
+
+    <div class="wrapper posts clearfix">
+
+        {{#foreach posts}}
+        <div class="{{post_class}}">
+            <a href="{{url}}">                
+                <div class="featured-image" {{#if image}} style="background-image:url({{image}})" {{else}} style="height: 40px; padding-top: 8%" {{/if}}></div>
+                <section class="post-excerpt">
+                    {{#author}}
+                        <div class="post-author" style="background-image: url({{image}})"></div>
+                    {{/author}}
+                    <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM D"}}</time>              
+                    <h2 class="post-title">
+                        {{#if tags}}<span class="post-tags">{{tags separator=" & " autolink="false"}}:</span> {{/if}}
+                        {{{title}}}
+                    </h2>
+                </section>
+            </a>
+        </div>
+        {{/foreach}}
+    </div>
+
+    {{!! Pagination links }}
+    {{pagination}}

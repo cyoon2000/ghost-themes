@@ -1,0 +1,17 @@
+{{#if @blog.cover}}
+<div class="cover-photo animated fadeIn" style="background-image: url({{@blog.cover}})">
+	{{#if @blog.description}}
+	    <div class="vertical">
+	        <h2>{{@blog.description}}</h2>
+	    </div>
+    {{/if}}
+    
+    <div class="continue-reading">
+	    <a href="#posts">
+	        <div class="continue-reading-icon">
+	            <i class="icon-angle-down"></i>
+	        </div>
+	    </a>
+    </div> 
+</div>
+{{/if}}

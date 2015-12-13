@@ -1,0 +1,69 @@
+{{!< default}}
+
+{{! This is a post template. It displays a single post that the user selected from the home page template. }}
+    <div class="wrapper">
+
+        {{! Everything inside the #post tags pulls data from the post }}
+        {{#post}}
+        
+        {{#if image}}
+        <img class="post-image" src="{{image}}" alt="{{{title}}}">
+        {{/if}}
+
+        <article class="{{post_class}}">
+            <section class="post-content">
+                <h1 class="post-title">{{#if tags}}<span class="post-tags">{{tags separator=" & "}}:</span>{{/if}} {{{title}}}</h1>            
+                <div class="post-meta">
+                    <span class="author">By {{author}}</span>
+                    <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">on {{date format="MMMM D, YYYY"}}</time>
+                </div>
+
+                <section class="post-content-output">{{content}}</section>
+
+                <section class="share">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                        <i class="icon-facebook"></i>
+                    </a>
+                    <a href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
+                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                        <i class="icon-twitter"></i>
+                    </a>
+                    <a href="https://plus.google.com/share?url={{url absolute="true"}}"
+                        onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                        <i class="icon-google-plus"></i>
+                    </a>
+                </section>
+
+                <section class="author-meta clearfix">
+                    {{#author}}
+                        {{#if image}}
+                        <div class="author-image-wrapper">
+                            <div class="author-image" style="background-image: url({{image}})"></div>
+                        </div>
+                        {{/if}}
+
+                        {{#if image}}
+                        <div class="author-bio">
+                        {{else}}
+                        <div class="author-bio" style="width: 90%;">
+                        {{/if}}
+                            <h3>{{name}}</h3>
+                            {{#if bio}}
+                                <p>{{bio}}</p>
+                            {{/if}}
+                            <p><a href="{{url}}">See more posts from {{name}}</a></p>
+                        </div>
+                    {{/author}}
+                </section>
+
+                <section class="comments">
+                    <button class="show-comments">Show Comments</button>
+                    <div id="disqus_thread"></div>
+                </section>
+
+            </section>
+        </article>
+        {{/post}}
+ 
+    </div>

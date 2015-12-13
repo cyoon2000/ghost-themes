@@ -1,0 +1,43 @@
+{{!< default}}
+
+{{! This is a tag page template. It displays posts from a paticular tag }}
+    
+    {{#if tag.image}}
+        <header class="cover-photo" style="background-image: url({{tag.image}})">
+            {{#if tag.description}}
+                <div class="vertical">
+                    <h2>{{tag.description}}</h2>
+                </div>
+            {{/if}}
+        </header>
+    {{/if}}
+
+    <div class="wrapper page-meta" {{#if tag.image}} style="margin-top: 0px" {{/if}}>
+        <h1>{{tag.name}}</h1>
+        {{#tag}}
+            <h3>{{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}</h3>
+        {{/tag}}
+    </div>
+
+    <div class="wrapper posts clearfix">    
+        {{#foreach posts}}
+        <div class="{{post_class}}">
+            <a href="{{url}}">                
+                <div class="featured-image" {{#if image}} style="background-image:url({{image}})" {{else}} style="height: 40px; padding-top: 8%" {{/if}}></div>
+                <section class="post-excerpt">
+                    {{#author}}
+                        <div class="post-author" style="background-image: url({{image}})"></div>
+                    {{/author}}
+                    <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM D"}}</time>              
+                    <h2 class="post-title">
+                        {{#if tags}}<span class="post-tags">{{tags separator=" & " autolink="false"}}:</span> {{/if}}
+                        {{{title}}}
+                    </h2>
+                </section>
+            </a> 
+        </div>  
+        {{/foreach}}
+    </div>
+
+    {{!! Pagination links }}
+    {{pagination}}

@@ -1,0 +1,29 @@
+{{!< default}}
+
+{{! This is a page template. A page outputs content just like any other post, and has all the same
+    attributes by default, but you can also customise it to behave differently if you prefer. }}
+    <div class="wrapper">
+
+        {{! Everything inside the #post tags pulls data from the post }}
+        {{#post}}
+        
+        {{#if image}}
+        <img class="post-image" src="{{image}}" alt="{{{title}}}">
+        {{/if}}
+
+        <article class="{{post_class}}">
+            <section class="post-content">
+                <h1 class="post-title">{{#if tags}}<span class="post-tags">{{tags separator=" & "}}:</span>{{/if}} {{{title}}}</h1>            
+
+                <section class="post-content-output">{{content}}</section>
+
+            </section>
+                        
+            <!-- www.123contactform.com script begins here -->
+
+<script type="text/javascript">var servicedomain="www.123contactform.com"; var frmRef=''; try { frmRef=window.top.location.href; } catch(err) {}; var cfJsHost = (("https:" == document.location.protocol) ? "https://" : "http://"); document.write(unescape("%3Cscript src='" + cfJsHost + servicedomain + "/includes/easyXDM.min.js' type='text/javascript'%3E%3C/script%3E")); frmRef=encodeURIComponent(frmRef).replace('%26','[%ANDCHAR%]'); document.write(unescape("%3Cscript src='" + cfJsHost + servicedomain + "/jsform-1723781.js?ref="+frmRef+"' type='text/javascript'%3E%3C/script%3E")); </script>
+    
+        </article>
+        {{/post}}
+ 
+    </div>

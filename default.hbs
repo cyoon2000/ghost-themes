@@ -46,6 +46,43 @@
             if (typeof jQuery == 'undefined') {
                 document.write('<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></'+'script>');
             }
+            
+            function onSuccess(data) {
+                var $result = $('#test-list');    
+                $.each(data.tags, function (i, tag) {
+                    $result.append(
+                        '<li><a href="/tag/' + tag.slug + '/">' + tag.name + '</a></li>'
+                    );
+                });
+            }   
+
+            function onSuccessSearch(data) {
+                var $result = $('#test-search');
+                $.each(data, function(i, element) {
+                    $result.append(
+                        '<tr><td> name:' + element.name + '</td>' +
+                        '<td> address:' + element.address.street + '</td>' +
+                        '<td> geo.lat:' + element.address.geo.lat + '</td>' + 
+                        '<td> geo.lng:' + element.address.geo.lng + '</td></tr>'
+                    );
+                });
+            }             
+
+            jQuery(document).ready(function () {
+              $.get(
+                ghost.url.api('tags', {
+                  limit: 'all', 
+                  include: 'count.posts', 
+                  order: 'count.posts DESC'
+                })
+              ).done(onSuccess);
+            });
+
+            var root = 'http://jsonplaceholder.typicode.com';            
+            jQuery(document).ready(function () {
+                $.get(root + '/users/')
+                    .done(onSuccessSearch);
+            });
         </script>
 
         <script src="{{asset "js/theme-options.js"}}"></script>

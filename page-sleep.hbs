@@ -1,0 +1,116 @@
+{{!< default}}
+
+{{! This is a page template. A page outputs content just like any other post, and has all the same
+    attributes by default, but you can also customise it to behave differently if you prefer. }}
+    <div class="wrapper">
+        {{log this }}
+
+        {{! Everything inside the #post tags pulls data from the post }}
+        {{#post}}
+        
+        {{#if image}}
+        <img class="post-image" src="{{image}}" alt="{{{title}}}">
+        {{/if}}
+
+        <section class="sleep-container container">
+          <div class="col-lg-1 col-md-1">
+          </div>
+          <div class="col-lg-10 col-md-10">
+            <form id="booking-search" class="form-inline">
+              <div class="form-group">
+                <label for="from_date">From</label>
+                <div class="input-group date" data-provide="datepicker">
+                  <input id="from_date" type="text" class="form-control" data-date-format="mm/dd/yyyy"/>
+                  <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-th"></span>
+                  </div>
+                </div>
+                <label for="to_date">To</label>
+                <div class="input-group date" data-provide="datepicker">
+                  <input id="to_date" type="text" class="form-control" />
+                  <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-th"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="guests">Guests</label>
+                <select class="form-control">
+                  <option>1 guest</option>
+                  <option>2 guests</option>
+                  <option>3 guests</option>
+                  <option>4 guests</option>
+                  <option>5 guests</option>
+                  <option>6 guests</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <button id="btn_search" type="button" class="btn btn-success">Search</button>
+              </div>
+            </form>
+          </div>
+          <div class="status"></div>
+        </section>
+        <div class="clearfix spacer"></div>
+        <section class="map">
+        </section>
+        <section class="results">
+          <div class="results-container">
+            <div class="row">
+              <div class="col-md-4">
+                <img src="http://placehold.it/300x200" class="img-responsive" />
+                title
+              </div>
+              <div class="col-md-4">
+                <img src="http://placehold.it/300x200" class="img-responsive" />
+                title
+              </div>
+              <div class="col-md-4">
+                <img src="http://placehold.it/300x200" class="img-responsive" />
+                title
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <img src="http://placehold.it/300x200" class="img-responsive" />
+                title
+              </div>
+              <div class="col-md-4">
+                <img src="http://placehold.it/300x200" class="img-responsive" />
+                title
+              </div>
+              <div class="col-md-4">
+                <img src="http://placehold.it/300x200" class="img-responsive" />
+                title
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <img src="http://placehold.it/300x200" class="img-responsive" />
+                title
+              </div>
+              <div class="col-md-4">
+                <img src="http://placehold.it/300x200" class="img-responsive" />
+                title
+              </div>
+              <div class="col-md-4">
+                <img src="http://placehold.it/300x200" class="img-responsive" />
+                title
+              </div>
+            </div>
+          </div>
+        </section>
+        {{/post}}
+ 
+    </div>
+    <script type="text/javascript">
+      if (typeof jQuery == 'undefined') {
+        document.write('<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></'+'script>');
+      }
+    </script>
+
+    <script src="{{asset "js/booking.js"}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.1/css/bootstrap-datepicker3.css">
+    <link rel="stylesheet" href="{{asset "css/extra.css"}}">
+

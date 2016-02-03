@@ -34,14 +34,13 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="guests">Guests</label>
                 <select id="guests" class="form-control">
-                  <option value="1">1 guest</option>
-                  <option value="2">2 guests</option>
-                  <option value="3">3 guests</option>
-                  <option value="4">4 guests</option>
-                  <option value="5">5 guests</option>
-                  <option value="6">6+ guests</option>
+                  <option value="1">1 Guest</option>
+                  <option value="2">2 Guests</option>
+                  <option value="3">3 Guests</option>
+                  <option value="4">4 Guests</option>
+                  <option value="5">5 Guests</option>
+                  <option value="6">6+ Guests</option>
                 </select>
               </div>
               <div class="form-group">
@@ -54,50 +53,110 @@
           <h3 class="status text-center col-md-10">
           </h3>
         </div>
-        <div class="clearfix spacer"></div>
+        <div class="clearfix spacer-below-status"></div>
         <section class="map">
         </section>
         <section class="results">
           <div class="results-container">
             <div class="row results-row">
-              {{! Uncomment for testing
-              <div id="results_place_1" class="col-md-4 col-sm-6">
-                <img src="http://placehold.it/300x200" class="center-block img-responsive" />
-                title
+
+              <div class="col-md-1 col-sm-1"></div>
+
+              {{! template tile }}
+              <div id="results_place_0" class="col-md-5 col-sm-5 results-place-tile">
+                <a id="results_img_anchor_0" href="#">
+                  <img id="results_img_0" src="http://placehold.it/300x300" class="center-block img-responsive results-img" />
+                </a>
+                <a id="results_title_anchor_0" class="results_anchor" href="#">
+                  <div id="results_title_0" class="center-block results-title results-img">title</div>
+                  <div id="results_description_0" class="center-block results-title results-img">description</div>
+                </a>
               </div>
-              <div class="col-md-4 col-sm-6">
-                <img src="http://placehold.it/300x200" class="center-block img-responsive" />
-                title
+              {{! end template tile }}
+
+              <div id="results_place_1" class="col-md-5 col-sm-5 results-place-tile">
+                <a id="results_img_anchor_1" href="#">
+                  <img id="results_img_1" src="http://placehold.it/300x300" class="center-block img-responsive results-img" />
+                </a>
+                <a id="results_title_anchor_1" href="#">
+                  <div id="results_title_1" class="center-block results-title results-img">title</div>
+                  <div id="results_description_1" class="center-block results-title results-img">description</div>
+                </a>
               </div>
-              <div class="col-md-4 col-sm-6">
-                <img src="http://placehold.it/300x200" class="center-block img-responsive" />
-                title
+              <div class="col-md-1 col-sm-1"></div>
+
+              <div class="clearfix"></div>
+
+              <div class="col-md-1 col-sm-1"></div>
+              <div id="results_place_2" class="col-md-5 col-sm-5 results-place-tile">
+                <a id="results_img_anchor_2" href="#">
+                  <img id="results_img_2" src="http://placehold.it/300x300" class="center-block img-responsive results-img" />
+                </a>
+                <a id="results_title_anchor_2" href="#">
+                  <div id="results_title_2" class="center-block results-title results-img">title</div>
+                  <div id="results_description_2" class="center-block results-title results-img">description</div>
+                </a>
               </div>
-              <div class="col-md-4 col-sm-6">
-                <img src="http://placehold.it/300x200" class="center-block img-responsive" />
-                title
+              <div id="results_place_3" class="col-md-5 col-sm-5 results-place-tile">
+                <a id="results_img_anchor_3" href="#">
+                  <img id="results_img_3" src="http://placehold.it/300x300" class="center-block img-responsive results-img" />
+                </a>
+                <a id="results_title_anchor_3" href="#">
+                  <div id="results_title_3" class="center-block results-title results-img">title</div>
+                  <div id="results_description_3" class="center-block results-title results-img">description</div>
+                </a>
               </div>
-              <div class="col-md-4 col-sm-6">
-                <img src="http://placehold.it/300x200" class="center-block img-responsive" />
-                title
+              <div class="col-md-1 col-sm-1"></div>
+
+              <div class="clearfix"></div>
+
+              <div class="col-md-1 col-sm-1"></div>
+              <div id="results_place_4" class="col-md-5 col-sm-5 results-place-tile">
+                <a id="results_img_anchor_4" href="#">
+                  <img id="results_img_4" src="http://placehold.it/300x300" class="center-block img-responsive results-img" />
+                </a>
+                <a id="results_title_anchor_4" href="#">
+                  <div id="results_title_4" class="center-block results-title results-img">title</div>
+                  <div id="results_description_4" class="center-block results-title results-img">description</div>
+                </a>
               </div>
-              <div class="col-md-4 col-sm-6">
-                <img src="http://placehold.it/300x200" class="center-block img-responsive" />
-                title
+              <div id="results_place_5" class="col-md-5 col-sm-5 results-place-tile">
+                <a id="results_img_anchor_5" href="#">
+                  <img id="results_img_5" src="http://placehold.it/300x300" class="center-block img-responsive results-img" />
+                </a>
+                <a id="results_title_anchor_5" href="#">
+                  <div id="results_title_5" class="center-block results-title results-img">title</div>
+                  <div id="results_description_5" class="center-block results-title results-img">description</div>
+                </a>
               </div>
-              <div class="col-md-4 col-sm-6">
-                <img src="http://placehold.it/300x200" class="center-block img-responsive" />
-                title
+              <div class="col-md-1 col-sm-1"></div>
+
+              <div class="clearfix"></div>
+
+              <div class="col-md-1 col-sm-1"></div>
+              <div id="results_place_6" class="col-md-5 col-sm-5 results-place-tile">
+                <a id="results_img_anchor_6" href="#">
+                  <img id="results_img_6" src="http://placehold.it/300x300" class="center-block img-responsive results-img" />
+                </a>
+                <a id="results_title_anchor_6" href="#">
+                  <div id="results_title_6" class="center-block results-title results-img">title</div>
+                  <div id="results_description_6" class="center-block results-title results-img">description</div>
+                </a>
               </div>
-              <div class="col-md-4 col-sm-6">
-                <img src="http://placehold.it/300x200" class="center-block img-responsive" />
-                title
+
+              <div id="results_place_7" class="col-md-5 col-sm-5 results-place-tile">
+                <a id="results_img_anchor_7" href="#">
+                  <img id="results_img_7" src="http://placehold.it/300x300" class="center-block img-responsive results-img" />
+                </a>
+                <a id="results_title_anchor_7" href="#">
+                  <div id="results_title_7" class="center-block results-title results-img">title</div>
+                  <div id="results_description_7" class="center-block results-title results-img">description</div>
+                </a>
               </div>
-              <div class="col-md-4 col-sm-6">
-                <img src="http://placehold.it/300x200" class="center-block img-responsive" />
-                title
-              </div>
-              }}
+              <div class="col-md-1 col-sm-1"></div>
+              <div class="clearfix"></div>
+
+
             </div>
           </div>
         </section>
@@ -110,7 +169,7 @@
       }
     </script>
 
-    <script src="{{asset "js/booking.js"}}"></script>
+    <script src="{{asset "js/booking.coffee.js"}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.1/js/bootstrap-datepicker.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.1/css/bootstrap-datepicker3.css">
     <link rel="stylesheet" href="{{asset "css/extra.css"}}">

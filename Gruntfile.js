@@ -15,6 +15,10 @@ module.exports = function(grunt) {
         files: ['assets/js/main.js'],
         tasks: ['js-task'],
       },
+      coffee: {
+        files: ['assets/coffee/*.coffee'],
+        tasks: ['coffee']
+      }
     },
     concat: {
         options: {
@@ -50,7 +54,18 @@ module.exports = function(grunt) {
           'assets/css/extra.css': 'assets/scss/extra.scss' // 'destination': 'source'
         }
       }
+    },
+    coffee: {
+      compile: {
+        options:{
+          join:true
+        },
+        files:{
+          'assets/js/booking.coffee.js':['assets/coffee/*.coffee']
+        }
+      }
     }
+
   });
   
   // Load grunt plugins
@@ -58,9 +73,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-coffee');
 
   // Default task(s).
-  grunt.registerTask('default', ['watch']);
+  grunt.registerTask('default', ['sass', 'coffee', 'watch']);
   grunt.registerTask('js-task', ['concat', 'uglify']);
   grunt.registerTask('sass-task', ['sass']);
 

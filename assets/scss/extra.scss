@@ -13,9 +13,10 @@ sleep/booking
 ====================================================================== */
 div.spacer-below-status { @include spacer(1.3em); }
 div.results-place-tile {display:none; }
-div.results-place-title { @include debug-border; height: 100px; }
 .results-img { width:400px; }
 div.results-container {
+    display:none;
     a:hover { text-decoration: none;}
 }
+div.results_anchor { height: 90px; line-height: 2em;}
 form#booking-search div.input-group { width: 42%; }

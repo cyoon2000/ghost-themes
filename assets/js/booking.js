@@ -73,13 +73,22 @@
         });
 
         var render_results_tile = function(id, node, callback){
+
             var img = "http://placehold.it/400x300";
             if (node.profilePhoto != null){
                 img = node.profilePhoto;
             }
             $('img#results_img_' + id).attr('src', img);
             $('div#results_title_' + id).html(node.title);
+            var description = "";
+            description += node.propertyType;
+            if (node.numBedroom != null){
+                description += " ";
+                description += node.numBedroom;
+                description += "bedroom";
+            }
 
+            $('div#results_description_'+ id).html(description);
 
             return false;
         }

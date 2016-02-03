@@ -74,8 +74,6 @@ do ($ = jQuery) ->
 
         img = node.profilePhoto? or "http://placehold.it/400x300"  
         $("img#results_img_#{id}").attr 'src', img
-        console.log(id)
-        console.log "[#{id}] img #{img}"
         $("div#results_title_#{id}").html node.title
         description = node.propertyType or "Secret"
         if node.numBedroom

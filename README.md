@@ -1,8 +1,8 @@
 # ghost-themes
-customization of ghost theme
+grunt/sass/coffee/bootstrap/jquery/handlebars/customization of ghost theme
+retina
 
 # configuration
 npm install grunt
 npm install grunt-cli
-grunt sass
 grunt

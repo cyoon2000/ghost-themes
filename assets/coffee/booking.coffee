@@ -6,6 +6,8 @@ do ($ = jQuery) ->
             maxViewMode: 0,
             todayHighlight: true,
             toggleActive: true
+        # onload search()
+        search(false)
         # bindings
         $('button#btn_search').click (e)->
             # validate
@@ -30,11 +32,12 @@ do ($ = jQuery) ->
         status.html statement
         return
 
-    search = ()->
+    search = (status)->
         # clear status
         status = $('h3.status')
         status.removeClass 'bg-warning'
-        status.html 'searching...'
+        if status
+            status.html 'searching...'
 
         from_d = $('input#from_date').val()
         to_d = $('input#to_date').val()
@@ -61,20 +64,21 @@ do ($ = jQuery) ->
                 for node in rsp
                     render_results_tile i, node
                     i++
-                $('div.results-container').show()
                 $('div.results-place-tile').fadeIn 'slow'
                 # add pagination
                 status.hide()
                 return
             error: (rsp)->
+                console.log rsp
                 return
         return
 
     render_results_tile = (id, node, callback)->
 
-        img = node.profilePhoto? or "http://placehold.it/400x300"  
+        img = node.profilePhoto?.thumbUrl? and node.profilePhoto.thumbUrl or "http://placehold.it/400x300"
         $("img#results_img_#{id}").attr 'src', img
-        $("div#results_title_#{id}").html node.title
+        $("h4#results_title_#{id}").html node.title
+        $("div#results_price_#{id}").html "$#{node.price}"
         description = node.propertyType or "Secret"
         if node.numBedroom
             description += " #{node.numBedroom} bedroom"

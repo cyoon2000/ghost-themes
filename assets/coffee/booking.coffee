@@ -6,6 +6,8 @@ do ($ = jQuery) ->
             maxViewMode: 0,
             todayHighlight: true,
             toggleActive: true
+        # onload search()
+        search(false)
         # bindings
         $('button#btn_search').click (e)->
             # validate
@@ -30,11 +32,12 @@ do ($ = jQuery) ->
         status.html statement
         return
 
-    search = ()->
+    search = (status)->
         # clear status
         status = $('h3.status')
         status.removeClass 'bg-warning'
-        status.html 'searching...'
+        if status
+            status.html 'searching...'
 
         from_d = $('input#from_date').val()
         to_d = $('input#to_date').val()
@@ -75,6 +78,7 @@ do ($ = jQuery) ->
         img = node.profilePhoto?.thumbUrl? and node.profilePhoto.thumbUrl or "http://placehold.it/400x300"
         $("img#results_img_#{id}").attr 'src', img
         $("h4#results_title_#{id}").html node.title
+        $("div#results_price_#{id}").html "$#{node.price}"
         description = node.propertyType or "Secret"
         if node.numBedroom
             description += " #{node.numBedroom} bedroom"

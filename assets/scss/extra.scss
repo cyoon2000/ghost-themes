@@ -1,3 +1,13 @@
+@import "mixins";
+/* ======================================================================
+variables
+====================================================================== */
+$image_path:'http://localhost:2368/assets/img';
+$ocean_deep: '#323D51';
+$slate_gray: '#4E5B6E';
+$ocean_green: '#3D827F';
+$baby_blue: '#62BDC1';
+
 /* ======================================================================
 mixins
 ====================================================================== */
@@ -7,15 +17,82 @@ mixins
 @mixin debug-border {
     border: 1px solid #666;
 }
+@mixin bp-retina-og {
+        only screen and (-moz-min-device-pixel-ratio: 1.5),         only screen and (-o-min-device-pixel-ratio: 3/2),
+        only screen and (-webkit-min-device-pixel-ratio: 1.5),
+        only screen and (min-device-pixel-ratio: 1.5) {
+            @content
+        }
+}
+@mixin bp-retina {
+    @media 
+        only screen and (-webkit-min-device-pixel-ratio: 2),
+        only screen and (min--moz-device-pixel-ratio: 2),
+        only screen and (-o-min-device-pixel-ratio: 2/1),
+        only screen and (min-device-pixel-ratio: 2),
+        only screen and (min-resolution: 192dpi),
+        only screen and (min-resolution: 2dppx){ 
+            @content
+        }
+}
+@mixin background-image($name, $name2x, $namesvg:false, $size:false) {
+    
+    @if($size){
+        background-size:$size;
+    }
+    background-image: url(#{$image_path}/#{$name});
+    @include bp-retina {
+        background-image: url(#{$image_path}/#{$name2x});
+    }
+    @if($namesvg){
+        background-image: linear-gradient(transparent, transparent),
+        url(#{$image_path}/#{$namesvg});
+    }
+}
 
 /* ======================================================================
 sleep/booking
 ====================================================================== */
+/* headers */
+.sleep-header {
+    @include background-image(
+        'background-header/background-sleep.png',
+        'background-header/background-sleep@2x.png',
+        $size:100% 283px);
+
+    background-repeat: no-repeat;
+    max-width:100%;
+    height:283px;
+
+}
+.sleep-container {
+
+    padding-top: 100px;
+    h1 {
+        color: #fff;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 36pt;
+        font-weight: 700;
+        text-align: center;
+    }
+    .spacer-below-header { @include spacer(1.3em); }
+}
+
+.sharp-border-radius { @include border-radius(0px) }
+.booking-search-width { max-width: 655px; }
+.booking-search-container { @extend .booking-search-width }
+form#booking_search {
+    @extend .booking-search-width;
+    input { @extend .sharp-border-radius }
+    button { @extend .sharp-border-radius }
+    div.input-group-addon { @extend .sharp-border-radius }
+    select { @extend .sharp-border-radius; -webkit-appearance: none; }
+    button.btn-search { background-color: $baby_blue; border-color: $baby_blue; }
+}
 div.spacer-below-status { @include spacer(1.3em); }
 div.results-place-tile {display:none; }
-.results-img { width:400px; }
+.results-img { width:100%; }
 div.results-container {
-    display:none;
     a:hover { text-decoration: none;}
 }
 div.results_anchor { height: 90px; line-height: 2em;}

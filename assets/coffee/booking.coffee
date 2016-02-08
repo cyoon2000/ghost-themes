@@ -4,6 +4,7 @@ do ($ = jQuery) ->
         # setup for date picker
         $('.input-group.date').datepicker
             maxViewMode: 0,
+            orientation:"bottom auto",
             todayHighlight: true,
             toggleActive: true
         # onload search()

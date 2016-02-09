@@ -80,6 +80,8 @@ do ($ = jQuery) ->
         $("img#results_img_#{id}").attr 'src', img
         $("h4#results_title_#{id}").html node.title
         $("div#results_price_#{id}").html "$#{node.price}"
+        $("a#results_img_anchor_#{id}").attr 'href', '/sleep-detail/?id=42'
+        $("a#results_title_anchor_#{id}").attr 'href', '/sleep-detail/?id=42'
         description = node.propertyType or "Secret"
         if node.numBedroom
             description += " #{node.numBedroom} bedroom"

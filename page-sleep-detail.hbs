@@ -1,0 +1,22 @@
+{{!< default}}
+
+{{! This is a page template. A page outputs content just like any other post, and has all the same
+    attributes by default, but you can also customise it to behave differently if you prefer. }}
+    <div class="deadbeat-wrapper">
+
+        {{! Everything inside the #post tags pulls data from the post }}
+        {{#post}}
+        {{/post}}
+        <section>
+          <div class="detail-header">
+          </div>
+          <div class="detail-summary">
+          </div>
+        </section>
+    </div>
+    <script type="text/javascript">
+      if (typeof jQuery == 'undefined') {
+        document.write('<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></'+'script>');
+      }
+    </script>
+    <script src="{{asset "js/detail.coffee.js"}}"></script>

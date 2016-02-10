@@ -1,21 +1,20 @@
 do ($ = jQuery) ->
     $(document).ready ->
-        console.log p
         # pull id from query params
         # hit json api with id
         # fill dom with details
-        p = get_query_params()
+        p = window.get_query_params()
         id = p?.id or null
 
+        detail_url = "#{_config.detail_url}?id=#{id}&token"
         $.ajax
-            url:_config.detail_url,
+            url:detail_url,
             context:this,
             dataType:'JSON',
             type:'GET',
             data:
                 id:id
             success: (rsp)->
-                console.log rsp
                 render_details rsp
                 render_photos rsp
                 return
@@ -24,15 +23,6 @@ do ($ = jQuery) ->
                 return
         return
 
-    get_query_params = ()->
-        query = window.location.search.substring(1)
-        raw_vars = query.split("&")
-        params = {}
-        for v in raw_vars
-            [key, val] = v.split("=")
-            params[key] = decodeURIComponent(val)
-        return params
-
     render_details = (data)->
 
         # update page title
@@ -40,7 +30,9 @@ do ($ = jQuery) ->
 
         $('div.detail-place-title').html data.title.toUpperCase()
         # update header
-        $('div.detail-header').css('background-image', "url(#{data.profilePhoto.photoUrl2x})")
+        header_image = if window.is_retina() then data.profilePhoto.photoUrl2x else data.profilePhoto.photoURL
+        console.log header_image
+        $('div.detail-header').css('background-image', "url(#{header_image})")
 
         # update summary
         $('div.detail-place-location').html (data?.region or "Baja, Mexico")
@@ -81,7 +73,8 @@ do ($ = jQuery) ->
         
         # retina detection
         for photo, i in data.photos
-            $("div.detail-photo-#{i} img").attr 'src', photo.thumbUrl2x
+            thumb = if window.is_retina() then photo.thumbUrl2x else photo.thumbUrl
+            $("div.detail-photo-#{i} img").attr 'src', thumb
 
         return
     return

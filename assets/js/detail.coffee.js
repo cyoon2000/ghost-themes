@@ -1,13 +1,13 @@
 (function() {
   (function($) {
-    var get_query_params, render_details, render_photos;
+    var render_details, render_photos;
     $(document).ready(function() {
-      var id, p;
-      console.log(p);
-      p = get_query_params();
+      var detail_url, id, p;
+      p = window.get_query_params();
       id = (p != null ? p.id : void 0) || null;
+      detail_url = _config.detail_url + "?id=" + id + "&token";
       $.ajax({
-        url: _config.detail_url,
+        url: detail_url,
         context: this,
         dataType: 'JSON',
         type: 'GET',
@@ -15,7 +15,6 @@
           id: id
         },
         success: function(rsp) {
-          console.log(rsp);
           render_details(rsp);
           render_photos(rsp);
         },
@@ -24,23 +23,13 @@
         }
       });
     });
-    get_query_params = function() {
-      var j, key, len, params, query, raw_vars, ref, v, val;
-      query = window.location.search.substring(1);
-      raw_vars = query.split("&");
-      params = {};
-      for (j = 0, len = raw_vars.length; j < len; j++) {
-        v = raw_vars[j];
-        ref = v.split("="), key = ref[0], val = ref[1];
-        params[key] = decodeURIComponent(val);
-      }
-      return params;
-    };
     render_details = function(data) {
-      var amenities, amenities_col_1, amenities_col_2, amenity, i, j, len;
+      var amenities, amenities_col_1, amenities_col_2, amenity, header_image, i, j, len;
       document.title = data.title;
       $('div.detail-place-title').html(data.title.toUpperCase());
-      $('div.detail-header').css('background-image', "url(" + data.profilePhoto.photoUrl2x + ")");
+      header_image = window.is_retina() ? data.profilePhoto.photoUrl2x : data.profilePhoto.photoURL;
+      console.log(header_image);
+      $('div.detail-header').css('background-image', "url(" + header_image + ")");
       $('div.detail-place-location').html((data != null ? data.region : void 0) || "Baja, Mexico");
       $('div.detail-description').html(data.description);
       $('div.detail-space li.accomodates').html("Accomodates <span>" + data.capacity + "</span>");
@@ -67,11 +56,12 @@
       $('div.detail-prices ul.detail-prices-list').append("<li class='list-group-item'>Weekly Rate <span>$" + data.weeklyRate + "</span></li>");
     };
     render_photos = function(data) {
-      var i, j, len, photo, ref;
+      var i, j, len, photo, ref, thumb;
       ref = data.photos;
       for (i = j = 0, len = ref.length; j < len; i = ++j) {
         photo = ref[i];
-        $("div.detail-photo-" + i + " img").attr('src', photo.thumbUrl2x);
+        thumb = window.is_retina() ? photo.thumbUrl2x : photo.thumbUrl;
+        $("div.detail-photo-" + i + " img").attr('src', thumb);
       }
     };
   })(jQuery);

@@ -11,4 +11,20 @@ do(global = window, $ = jQuery) ->
     # SEE: extra.scss
     global._config.img_url = "https://www.dropbox.com/sh/xhmto6yekn6tqip/AADKlct4Cv5sfzUITcErB4pua?dl=0"
 
+    # commons
+    global.get_query_params = ()->
+        query = window.location.search.substring(1)
+        raw_vars = query.split("&")
+        params = {}
+        for v in raw_vars
+            [key, val] = v.split("=")
+            params[key] = decodeURIComponent(val)
+        return params
+
+    global.is_retina = ()->
+        if global.matchMedia
+            mq = global.matchMedia "only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6/2), only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen  and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 1.3dppx)"
+            return mq and mq.matches or global.devicePixelRatio >1
+        return
+
     return

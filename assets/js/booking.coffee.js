@@ -2,7 +2,6 @@
   (function($) {
     var _missing, render_results_tile, search, validate;
     $(document).ready(function() {
-      console.log(_config.search_url);
       $('.input-group.date').datepicker({
         maxViewMode: 0,
         orientation: "bottom auto",
@@ -31,7 +30,7 @@
       status.html(statement);
     };
     search = function(status) {
-      var from_d, guests, to_d;
+      var from_d, guests, search_url, to_d;
       status = $('h3.status');
       status.removeClass('bg-warning');
       if (status) {
@@ -42,23 +41,20 @@
       console.log("from " + from_d + " to " + to_d);
       guests = $('select#guests').val();
       console.log(guests);
+      search_url = _config.search_url + "?from=" + from_d + "&to=" + to_d + "&guests=" + guests + "&token=";
+      console.log(search_url);
       $.ajax({
-        url: _config.search_url,
+        url: search_url,
         context: this,
         dataType: 'JSON',
         type: 'GET',
-        data: {
-          param1: 'param1',
-          param2: 'param2'
-        },
+        data: {},
         success: function(rsp) {
           var i, j, len, node;
           console.log("rsp[" + rsp.length + "]");
-          i = 0;
-          for (j = 0, len = rsp.length; j < len; j++) {
-            node = rsp[j];
+          for (i = j = 0, len = rsp.length; j < len; i = ++j) {
+            node = rsp[i];
             render_results_tile(i, node);
-            i++;
           }
           $('div.results-place-tile').fadeIn('slow');
           status.hide();
@@ -69,13 +65,13 @@
       });
     };
     render_results_tile = function(id, node, callback) {
-      var description, img, ref;
-      img = (((ref = node.profilePhoto) != null ? ref.thumbUrl : void 0) != null) && node.profilePhoto.thumbUrl || "http://placehold.it/400x300";
+      var description, img;
+      img = window.is_retina() ? node.profilePhoto.thumbUrl2x : node.profilePhoto.thumbUrl || "http://placehold.it/400x300";
       $("img#results_img_" + id).attr('src', img);
       $("h4#results_title_" + id).html(node.title);
       $("div#results_price_" + id).html("$" + node.price);
-      $("a#results_img_anchor_" + id).attr('href', '/sleep-detail/?id=42');
-      $("a#results_title_anchor_" + id).attr('href', '/sleep-detail/?id=42');
+      $("a#results_img_anchor_" + id).attr('href', "/sleep-detail/?id=" + node.id);
+      $("a#results_title_anchor_" + id).attr('href', "/sleep-detail/?id=" + node.id);
       description = node.propertyType || "Secret";
       if (node.numBedroom) {
         description += " &middot; ";

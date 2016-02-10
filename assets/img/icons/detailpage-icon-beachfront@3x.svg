@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="22px" height="20px" viewBox="0 0 22 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.5 (25232) - http://www.bohemiancoding.com/sketch -->
+    <title>detailpage-icon-beachfront@3x</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="detailspage" sketch:type="MSArtboardGroup" transform="translate(-152.000000, -531.000000)" fill="#3E747E">
+            <path d="M163.171554,531.775024 C157.106684,531.775024 152.172014,536.722705 152.172014,542.804488 C152.172014,543.339459 152.604298,543.773807 153.138784,543.773807 L162.377421,543.773807 L162.377421,550.54196 C162.377421,551.076932 162.810166,551.511279 163.344652,551.511279 C163.878677,551.511279 164.310961,551.077393 164.310961,550.54196 L164.310961,543.773345 L173.205244,543.773345 C173.73927,543.773345 174.172014,543.339459 174.172014,542.804026 C174.172014,536.722705 169.237344,531.775024 163.171554,531.775024 L163.171554,531.775024 Z M154.157115,541.834707 C154.6405,537.276139 158.498833,533.713662 163.171554,533.713662 C167.844275,533.713662 171.703528,537.276139 172.186913,541.834707 L154.157115,541.834707 L154.157115,541.834707 Z" id="detailpage-icon-beachfront" sketch:type="MSShapeGroup" transform="translate(163.172014, 541.643152) rotate(-26.000000) translate(-163.172014, -541.643152) "></path>
+        </g>
+    </g>
+</svg>

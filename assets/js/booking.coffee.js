@@ -78,7 +78,8 @@
       $("a#results_title_anchor_" + id).attr('href', '/sleep-detail/?id=42');
       description = node.propertyType || "Secret";
       if (node.numBedroom) {
-        description += " " + node.numBedroom + " bedroom";
+        description += " &middot; ";
+        description += node.numBedroom + " bedroom";
       }
       $("div#results_description_" + id).html(description);
     };

@@ -50,6 +50,30 @@ mixins
         url(#{$image_path}/#{$namesvg});
     }
 }
+/* ======================================================================
+useful
+====================================================================== */
+.row.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+
+    > [class^="col-"],
+    > [class*=" col-"] {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+.row.thin-gutters {
+    margin-right: 0;
+    margin-left: 0;
+
+    > [class^="col-"],
+    > [class*=" col-"] {
+        padding-right: 2px;
+        padding-left: 2px;
+    }
+}
 
 /* ======================================================================
 sleep/booking
@@ -118,7 +142,7 @@ div.results-place-tile {
         padding: 1em;
     }
     a.results-anchor:visited {
-        div { color: $demphasize_gray };
+        div { color: #888; };
     }
 }
 div.spacer-below-description { @include spacer(0.5em); }
@@ -127,3 +151,122 @@ div.results-container {
 }
 div.results-anchor { height: 90px; line-height: 2em;}
 form#booking-search div.input-group { width: 42%; }
+
+/* ======================================================================
+detail page
+====================================================================== */
+div.detail-header {
+    background-size: 100% 425px;
+    height: 425px;
+    width: 100%;
+}
+
+div.detail-summary {
+    background-color:#fff;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    div.spacer-above-title { @include spacer(1.2em); }
+    div.detail-place-title {
+        font-size: 16pt;
+        font-weight: 700;
+    }
+
+    div.detail-place-location {
+        color: #888;
+        font-size: 18px;
+    }
+    div.detail-place-icon-list { margin-top: 1em;  width:100%; }
+    div.icon-group {
+        width: 25%;
+    }
+    div.spacer-below-icons { @include spacer(100px);}
+    div.detail-booking-container {
+
+        @include debug-border;
+    }
+    div.detail-booking-container-container {
+        height: 11em;
+    }
+    div.detail-booking-container {
+        position: relative;
+        bottom: 20%;
+        @include debug-border;
+        z-index: 100;
+    }
+    div.spacer-below-booking { @include spacer(150px); }
+}
+
+.icon-size {
+    height: 22px;
+    width: 20px;
+}
+div.icon-group {
+
+    .icon-beachfront {
+        @extend .icon-size;
+        @include background-image(
+            'icons/detailpage-icon-beachfront.png',
+            'icons/detailpage-icon-beachfront@2x.png',
+            'icons/detailpage-icon-beachfront@3x.svg',
+            $size:contain);
+        background-repeat: no-repeat;
+    }
+    .icon-house {
+        @extend .icon-size;
+        @include background-image(
+            'icons/detailpage-icon-house.png',
+            'icons/detailpage-icon-house@2x.png',
+            'icons/detailpage-icon-house@3x.svg',
+            $size:contain);
+        background-repeat: no-repeat;
+    }
+    .icon-guests {
+        @extend .icon-size;
+        @include background-image(
+            'icons/detailpage-icon-guests.png',
+            'icons/detailpage-icon-guests@2x.png',
+            'icons/detailpage-icon-guests@3x.svg',
+            $size:contain);
+        background-repeat: no-repeat;
+    }
+    .icon-bedrooms {
+        @extend .icon-size;
+        @include background-image(
+            'icons/detailpage-icon-bedroom.png',
+            'icons/detailpage-icon-bedroom@2x.png',
+            'icons/detailpage-icon-bedroom@3x.svg',
+            $size:contain);
+        background-repeat: no-repeat;
+    }
+    .icon-title {
+        color: #888;
+        font-size:8pt;
+        font-weight:700;
+        text-align: center;
+    }
+}
+
+.font-size-categories { font-size: 10pt; }
+div.detail-meat {
+    div.detail-subleader { color: #0f0f0f; font-size: 18px; font-weight: 700 }
+    div.spacer-above-subleader { @include spacer(3em); }
+    div.spacer-below-subleader { @include spacer(2em); }
+    div.spacer-below-description { @include spacer(2em); border-bottom: 1px solid #ccc;}
+    div.spacer-below-space { @include spacer(1em); border-bottom: 1px solid #ccc;}
+    div.spacer-below-amenities { @include spacer(1em); border-bottom: 1px solid #ccc;}
+    div.detail-description { font-size: 11pt; }
+    color: #888;
+    span { color:#0f0f0f };
+    font-size: 10pt;
+    div.detail-space { margin-top: 1em; }
+    div.detail-space-leader { @extend .font-size-categories }
+    div.detail-amenities { margin-top: 1em; }
+    div.detail-amenities-leader { @extend .font-size-categories }
+    div.detail-prices { margin-top: 1em; }
+    div.detail-prices-leader { @extend .font-size-categories }
+
+    ul { border:none; }
+    li { background-color: inherit; border: none; line-height: 0.95em; }
+
+}
+div.spacer-between-photos { @include spacer(0.3em); }

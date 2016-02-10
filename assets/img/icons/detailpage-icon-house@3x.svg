@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="26px" height="24px" viewBox="0 0 26 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.5 (25232) - http://www.bohemiancoding.com/sketch -->
+    <title>detailpage-icon-house@3x</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="detailspage" sketch:type="MSArtboardGroup" transform="translate(-256.000000, -533.000000)" fill="#3E747E">
+            <path d="M256,538.296552 L256,543.634483 L256.082759,557 L281.324138,557 L281.324138,538.296552 L268.662069,533 L256,538.296552 Z M274.951724,555.427586 L271.268966,555.427586 L271.268966,548.682759 L274.951724,548.682759 L274.951724,555.427586 L274.951724,555.427586 Z M276.524138,555.427586 L276.524138,547.110345 L269.696552,547.110345 L269.696552,555.427586 L257.572414,555.427586 L257.572414,539.331034 L268.662069,534.696552 L279.751724,539.331034 L279.751724,555.427586 L276.524138,555.427586 Z" id="detailpage-icon-house" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,151 @@
+{{!< default}}
+
+{{! This is a page template. A page outputs content just like any other post, and has all the same
+    attributes by default, but you can also customise it to behave differently if you prefer. }}
+    <div class="deadbeat-wrapper">
+
+        {{! Everything inside the #post tags pulls data from the post }}
+        {{#post}}
+        {{/post}}
+        <section>
+          <div class="detail-header">
+          </div>
+          <div class="detail-summary container-fluid">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-6">
+              <div class="spacer-above-title"></div>
+              <div class="detail-place-title"></div>
+              <div class="detail-place-location"></div>
+              <div class="detail-place-icon-list">
+                <div class="icon-group icon-beachfront-group pull-left">
+                  <div class="center-block icon-beachfront">
+                    <span></span>
+                  </div>
+                  <div class="icon-title">
+                    BEACHFRONT
+                  </div>
+                </div>
+                <div class="icon-group icon-house-group pull-left">
+                  <div class="center-block icon-house">
+                    <span></span>
+                  </div>
+                  <div class="icon-title">
+                    ENTIRE HOUSE
+                  </div>
+                </div>
+                <div class="icon-group icon-guests-group pull-left">
+                  <div class="center-block icon-guests">
+                    <span></span>
+                  </div>
+                  <div class="icon-title">
+                    2 GUESTS
+                  </div>
+                </div>
+                <div class="icon-group icon-bedrooms-group pull-left">
+                  <div class="center-block icon-bedrooms">
+                    <span></span>
+                  </div>
+                  <div class="icon-title">
+                    2 BEDROOMS
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="clearfix visible-xs-block spacer-below-icons"></div>
+            <div class="col-sm-4">
+              <div class="detail-booking-container-container">
+                <div class="detail-booking-container">
+                  <ul class="list-group">
+                    <li class="list-group-item">foo</li>
+                    <li class="list-group-item">foo</li>
+                    <li class="list-group-item">foo</li>
+                    <li class="list-group-item">foo</li>
+                    <li class="list-group-item">foo</li>
+                    <li class="list-group-item">foo</li>
+                    <li class="list-group-item">foo</li>
+                    <li class="list-group-item">foo</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="clearfix visible-xs-block spacer-below-booking"></div>
+          </div>
+        </section>
+        <section>
+          <div class="container-fluid detail-meat">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-6">
+              <div class="spacer-above-subleader"></div>
+              <div class="container-fluid">
+                <div class="col-sm-12 detail-subleader">
+                  About this place
+                </div>
+                <div class="col-sm-12 spacer-below-subleader"></div>
+                <div class="col-sm-12 detail-description"></div>
+                <div class="col-sm-12 spacer-below-description"></div>
+              </div>
+              <div class="container-fluid detail-space">
+                  {{! placeholders - TODO: dynamically fill from template}}
+                  <div class="col-sm-3 detail-space-leader"><ul class="list-group"><li class="list-group-item">The space</li></ul></div>
+                  <div class="col-sm-4">
+                    <ul class="list-group">
+                      <li class="list-group-item accomodates">acc</li>
+                      <li class="list-group-item bedrooms">bd</li>
+                      <li class="list-group-item bathrooms">ba</li>
+                    </ul>
+                  </div>
+                  <div class="col-sm-5">
+                    <ul class="list-group">
+                      <li class="list-group-item property_type"></li>
+                      <li class="list-group-item room_type"></li>
+                    </ul>
+                  </div>
+                  <div class="col-sm-12 spacer-below-space"></div>
+              </div>
+              <div class="container-fluid detail-amenities">
+                <div class="col-sm-3 detail-amenities-leader"><ul class="list-group"><li class="list-group-item">Amenities</li></ul></div>
+                  <div class="col-sm-4">
+                    <ul class="list-group amenities-col-1">
+                    </ul>
+                  </div>
+                  <div class="col-sm-5">
+                    <ul class="list-group amenities-col-2">
+                    </ul>
+                  </div>
+                  <div class="col-sm-12 spacer-below-amenities"></div>
+              </div>
+              <div class="container-fluid detail-prices">
+                <div class="col-sm-3 detail-prices-leader"><ul class="list-group"><li class="list-group-item">Prices</li></ul></div>
+                  <div class="col-sm-9 detail-prices-text">
+                      <ul class="list-group detail-prices-list">
+                      </ul>
+                  </div>
+              </div>
+              <div class="detail-gallery">
+                <div class="container-fluid">
+                  <div class="row thin-gutters">
+                    <div class="col-sm-6 detail-photo-0"><img class="img-responsive" /></div>
+                    <div class="col-sm-6 detail-photo-1"><img class="img-responsive" /></div>
+                  </div>
+                  <div class="spacer-between-photos"></div>
+                  <div class="row thin-gutters">
+                    <div class="col-sm-6 detail-photo-2"><img class="img-responsive" /></div>
+                    <div class="col-sm-6 detail-photo-3"><img class="img-responsive" /></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="detail-map">
+        </div>
+    </div>
+    <script type="text/javascript">
+      if (typeof jQuery == 'undefined') {
+        document.write('<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></'+'script>');
+      }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.1/css/bootstrap-datepicker3.css">
+    <script src="{{asset "js/detail.coffee.js"}}"></script>

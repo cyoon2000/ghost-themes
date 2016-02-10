@@ -1,11 +1,12 @@
 do ($ = jQuery) ->
     $(document).ready ->
-        console.log _config.search_url
         # setup for date picker
         $('.input-group.date').datepicker
             maxViewMode: 0,
+            orientation:"bottom auto",
             todayHighlight: true,
             toggleActive: true
+        # TODO:jwt request
         # onload search()
         search(false)
         # bindings
@@ -48,22 +49,19 @@ do ($ = jQuery) ->
         console.log guests
 
         # search
-        #
+        search_url = "#{_config.search_url}?from=#{from_d}&to=#{to_d}&guests=#{guests}&token="
+        console.log search_url
         $.ajax 
-            url:_config.search_url,
+            url:search_url,
             context:this,
             dataType:'JSON',
             type:'GET',
-            data: 
-                param1:'param1',
-                param2:'param2'
+            data: {},
             success: (rsp)->
                 # dom
                 console.log "rsp[#{rsp.length}]"
-                i = 0
-                for node in rsp
+                for node,i in rsp
                     render_results_tile i, node
-                    i++
                 $('div.results-place-tile').fadeIn 'slow'
                 # add pagination
                 status.hide()
@@ -75,13 +73,17 @@ do ($ = jQuery) ->
 
     render_results_tile = (id, node, callback)->
 
-        img = node.profilePhoto?.thumbUrl? and node.profilePhoto.thumbUrl or "http://placehold.it/400x300"
+        img = if window.is_retina() then node.profilePhoto.thumbUrl2x else node.profilePhoto.thumbUrl or "http://placehold.it/400x300"
         $("img#results_img_#{id}").attr 'src', img
         $("h4#results_title_#{id}").html node.title
         $("div#results_price_#{id}").html "$#{node.price}"
+        # placeholder id
+        $("a#results_img_anchor_#{id}").attr 'href', "/sleep-detail/?id=#{node.id}"
+        $("a#results_title_anchor_#{id}").attr 'href', "/sleep-detail/?id=#{node.id}"
         description = node.propertyType or "Secret"
         if node.numBedroom
-            description += " #{node.numBedroom} bedroom"
+            description += " &middot; "
+            description += "#{node.numBedroom} bedroom"
         $("div#results_description_#{id}").html description
         return
 

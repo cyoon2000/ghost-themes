@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="62px" height="62px" viewBox="0 0 62 62" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.5 (25232) - http://www.bohemiancoding.com/sketch -->
+    <title>thumbnail-sleep-badge-beachfront@3x</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="sleep-search" sketch:type="MSArtboardGroup" transform="translate(-432.000000, -929.000000)">
+            <g id="thumbnail-sleep-badge-beachfront" sketch:type="MSLayerGroup" transform="translate(433.000000, 930.000000)">
+                <circle id="Oval-3" stroke="#FFFFFF" stroke-width="2" fill="#62BDC1" sketch:type="MSShapeGroup" cx="30" cy="30" r="30"></circle>
+                <path d="M25.9204545,8.19759699 C19.9322727,8.19759699 15.06,13.0827156 15.06,19.087597 C15.06,19.6158041 15.4868182,20.0446591 16.0145455,20.0446591 L25.1363636,20.0446591 L25.1363636,26.7272316 C25.1363636,27.2554388 25.5636364,27.6842938 26.0913636,27.6842938 C26.6186364,27.6842938 27.0454545,27.2558945 27.0454545,26.7272316 L27.0454545,20.0442034 L35.8272727,20.0442034 C36.3545455,20.0442034 36.7818182,19.6158041 36.7818182,19.0871412 C36.7818182,13.0827156 31.9095455,8.19759699 25.9204545,8.19759699 L25.9204545,8.19759699 Z M17.02,18.1300791 C17.4972727,13.6291525 21.3068182,10.1117213 25.9204545,10.1117213 C30.5340909,10.1117213 34.3445455,13.6291525 34.8218182,18.1300791 L17.02,18.1300791 L17.02,18.1300791 Z" id="Shape" fill="#FFFFFF" sketch:type="MSShapeGroup" transform="translate(25.920909, 17.940945) rotate(-26.000000) translate(-25.920909, -17.940945) "></path>
+                <text id="BEACH" sketch:type="MSTextLayer" font-family="Montserrat" font-size="9" font-weight="bold" sketch:alignment="middle" fill="#FFFFFF">
+                    <tspan x="14.381" y="37">BEACH</tspan>
+                    <tspan x="14.345" y="48">FRONT</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

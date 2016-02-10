@@ -61,7 +61,9 @@ module.exports = function(grunt) {
           join:true
         },
         files:{
-          'assets/js/booking.coffee.js':['assets/coffee/*.coffee']
+          'assets/js/booking.coffee.js':['assets/coffee/booking.coffee'],
+          'assets/js/config.coffee.js':['assets/coffee/config.coffee'],
+          'assets/js/detail.coffee.js':['assets/coffee/detail.coffee']
         }
       }
     }

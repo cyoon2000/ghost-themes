@@ -21,6 +21,15 @@ do ($ = jQuery) ->
             error: (rsp)->
                 console.log rsp
                 return
+        # setup for date picker
+        $('input.datepicker').datepicker
+            maxViewMode: 0,
+            orientation:"bottom auto",
+            todayHighlight: true,
+            toggleActive: true
+
+        # update booking summary
+        # bind book
         return
 
     render_details = (data)->
@@ -31,7 +40,6 @@ do ($ = jQuery) ->
         $('div.detail-place-title').html data.title.toUpperCase()
         # update header
         header_image = if window.is_retina() then data.profilePhoto.photoUrl2x else data.profilePhoto.photoURL
-        console.log header_image
         $('div.detail-header').css('background-image', "url(#{header_image})")
 
         # update summary

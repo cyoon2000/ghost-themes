@@ -54,17 +54,70 @@
             <div class="clearfix visible-xs-block spacer-below-icons"></div>
             <div class="col-sm-4">
               <div class="detail-booking-container-container">
-                <div class="detail-booking-container">
-                  <ul class="list-group">
-                    <li class="list-group-item">foo</li>
-                    <li class="list-group-item">foo</li>
-                    <li class="list-group-item">foo</li>
-                    <li class="list-group-item">foo</li>
-                    <li class="list-group-item">foo</li>
-                    <li class="list-group-item">foo</li>
-                    <li class="list-group-item">foo</li>
-                    <li class="list-group-item">foo</li>
-                  </ul>
+                <div class="container-fluid detail-booking-container">
+                  <div class="spacer-between"></div>
+                  <div class="row thin-gutters">
+                    <div class="col-sm-3 booking-price">
+                      $230
+                    </div>
+                    <div class="col-sm-5"></div>
+                    <div class="col-sm-4 booking-period text-right">per night</div>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="clearfix spacer-between"></div>
+                  <div class="row thin-gutters">
+                    <div class="col-sm-5">
+                      <div class="form-group">
+                        <label for="from_date">Check In</label>
+                        <input id="from_date" type="text" class="form-control datepicker" placeholder="Check In" data-date-format="mm/dd/yyyy"/>
+                      </div>
+                    </div>
+                    <div class="col-sm-5">
+                      <div class="form-group">
+                        <label for="to_date">Check Out</label>
+                        <input id="to_date" type="text" placeholder="Check Out" class="form-control datepicker" data-date-format="mm/dd/yyyy"/>
+                      </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                          <label for="guests">Guests</label>
+                          <select id="guests" class="form-control">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6+</option>
+                          </select>
+                        </div>
+                  </div>
+                  <div class="clearfix spacer-between"></div>
+                  <div class="row thin-gutters">
+                    <div class="col-sm-5 booking-summary">
+                      $230 x 2 nights
+                    </div>
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-3 booking-subtotal text-right">
+                      $460
+                    </div>
+                  </div>
+                  <div class="spacer-between-totals"></div>
+                  <div class="row thin-gutters">
+                    <div class="col-sm-3 booking-summary-last-line">
+                      Total
+                    </div>
+                    <div class="col-sm-6"></div>
+                    <div class="col-sm-3 booking-total text-right">
+                      $480
+                    </div>
+                  </div>
+                  <div class="spacer-between"></div>
+                  <div class="row thin-gutters">
+                    <div class="col-sm-12">
+                      <button id="btn_search" type="button" class="btn btn-info btn-search">Book</button>
+                    </div>
+                  </div>
+                  <div class="spacer-between"></div>
                 </div>
               </div>
             </div>

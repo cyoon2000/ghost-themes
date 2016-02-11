@@ -1,10 +1,23 @@
 (function() {
   (function(global, $) {
-    global._config = {
-      base_url: 'https://dl.dropboxusercontent.com/u/122147773/',
-      search_url: '//localhost:2368/assets/js/faker.js',
-      detail_url: '//localhost:2368/assets/js/faker-detail.js'
+    var __DEV__, __PROD__, config, env;
+    __DEV__ = 'DEV';
+    __PROD__ = 'PROD';
+    env = global.location.href.search('localhost') !== -1 ? __PROD__ : __DEV__;
+    config = {
+      'DEV': {
+        base_url: 'https://dl.dropboxusercontent.com/u/122147773/',
+        search_url: '//localhost:2368/assets/js/faker.js',
+        detail_url: '//localhost:2368/assets/js/faker-detail.js'
+      },
+      'PROD': {
+        base_url: 'https://dl.dropboxusercontent.com/u/122147773/',
+        search_url: 'https://dl.dropboxusercontent.com/u/122147773/showcase/json/searchResult.json',
+        detail_url: 'https://dl.dropboxusercontent.com/u/122147773/showcase/json/searchResultDetail.json'
+      }
     };
+    global._env = env;
+    global._config = config[env];
     global._config.img_url = "https://www.dropbox.com/sh/xhmto6yekn6tqip/AADKlct4Cv5sfzUITcErB4pua?dl=0";
     global.get_query_params = function() {
       var i, key, len, params, query, raw_vars, ref, v, val;

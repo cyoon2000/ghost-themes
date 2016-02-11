@@ -3,7 +3,7 @@
     var __DEV__, __PROD__, config, env;
     __DEV__ = 'DEV';
     __PROD__ = 'PROD';
-    env = global.location.href.search('localhost') !== -1 ? __PROD__ : __DEV__;
+    env = global.location.hostname.search('localhost') === 0 ? __DEV__ : __PROD__;
     config = {
       'DEV': {
         base_url: 'https://dl.dropboxusercontent.com/u/122147773/',
@@ -18,6 +18,7 @@
     };
     global._env = env;
     global._config = config[env];
+    console.log(env);
     global._config.img_url = "https://www.dropbox.com/sh/xhmto6yekn6tqip/AADKlct4Cv5sfzUITcErB4pua?dl=0";
     global.get_query_params = function() {
       var i, key, len, params, query, raw_vars, ref, v, val;

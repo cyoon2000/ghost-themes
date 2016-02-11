@@ -109,8 +109,10 @@ sleep/booking
 .booking-search-container { @extend .booking-search-width }
 form#booking_search {
     @extend .booking-search-width;
+    .form-group-from, .form-group-to { width: 33%;}
+    .form-group-button { width: 17%;}
     input { @extend .sharp-border-radius }
-    button { @extend .sharp-border-radius }
+    button { @extend .sharp-border-radius; width: 100%; }
     div.input-group-addon { @extend .sharp-border-radius }
     select { @extend .sharp-border-radius; -webkit-appearance: none; }
     button.btn-search { background-color: $baby_blue; border-color: $baby_blue; }

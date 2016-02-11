@@ -39,7 +39,11 @@ do ($ = jQuery) ->
 
         $('div.detail-place-title').html data.title.toUpperCase()
         # update header
-        header_image = if window.is_retina() then data.profilePhoto.photoUrl2x else data.profilePhoto.photoURL
+
+        console.log "is retina: #{window.is_retina()}"
+        header_image = if window.is_retina() then data.profilePhoto.photoUrl2x else data.profilePhoto.photoUrl
+        console.log "header image: #{header_image}"
+
         $('div.detail-header').css('background-image', "url(#{header_image})")
 
         # update summary

@@ -33,7 +33,9 @@
       var amenities, amenities_col_1, amenities_col_2, amenity, header_image, i, j, len;
       document.title = data.title;
       $('div.detail-place-title').html(data.title.toUpperCase());
-      header_image = window.is_retina() ? data.profilePhoto.photoUrl2x : data.profilePhoto.photoURL;
+      console.log("is retina: " + (window.is_retina()));
+      header_image = window.is_retina() ? data.profilePhoto.photoUrl2x : data.profilePhoto.photoUrl;
+      console.log("header image: " + header_image);
       $('div.detail-header').css('background-image', "url(" + header_image + ")");
       $('div.detail-place-location').html((data != null ? data.region : void 0) || "Baja, Mexico");
       $('div.detail-description').html(data.description);

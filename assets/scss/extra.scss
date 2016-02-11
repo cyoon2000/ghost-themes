@@ -141,8 +141,11 @@ div.results-place-tile {
         display: block;
         padding: 1em;
     }
-    a.results-anchor:visited {
-        div { color: #888; };
+    a.results-anchor {
+        div { color: #888; }
+    }
+    a.results-anchor:hover {
+        div { color: #62BDC1; }
     }
 }
 div.spacer-below-description { @include spacer(0.5em); }
@@ -183,9 +186,18 @@ div.detail-summary {
     div.detail-booking-container {
 
         @include debug-border;
+        background-color: #fff;
     }
     div.detail-booking-container-container {
         height: 11em;
+        font-size: 11pt;
+        div.booking-price { font-size:16pt; font-weight: 700 }
+        div.booking-period { color: #888; }
+        button { @extend .sharp-border-radius; width: 100%; }
+
+        div.spacer-between { @include spacer(1em); }
+        div.spacer-between-totals { @include spacer(1.1em); border-bottom: 1px solid #ccc; }
+        div.booking-summary-last-line { margin-top: 1em; }
     }
     div.detail-booking-container {
         position: relative;
@@ -193,7 +205,9 @@ div.detail-summary {
         @include debug-border;
         z-index: 100;
     }
+
     div.spacer-below-booking { @include spacer(150px); }
+
 }
 
 .icon-size {

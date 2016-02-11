@@ -2,7 +2,7 @@ do(global = window, $ = jQuery) ->
 
     __DEV__ = 'DEV'
     __PROD__ = 'PROD'
-    env = if global.location.href.search('localhost') != -1 then __PROD__ else __DEV__
+    env = if global.location.hostname.search('localhost') == 0 then __DEV__ else __PROD__
 
     config =
         'DEV':
@@ -16,6 +16,7 @@ do(global = window, $ = jQuery) ->
 
     global._env = env
     global._config = config[env]
+    console.log env
 
     # TODO: static urls
     # SEE: extra.scss

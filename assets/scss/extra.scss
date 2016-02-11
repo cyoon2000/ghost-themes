@@ -87,6 +87,7 @@ sleep/booking
 
     background-repeat: no-repeat;
     max-width:100%;
+    margin-top: -90px;
     height:283px;
 
 }
@@ -160,6 +161,8 @@ detail page
 ====================================================================== */
 div.detail-header {
     background-size: 100% 425px;
+    /* hack because of ghost */
+    margin-top: -90px;
     height: 425px;
     width: 100%;
 }

@@ -62,7 +62,6 @@ do ($ = jQuery) ->
                     node.to_d = to_d
                     node.guests = guests
                     render_results_tile i, node
-                $('div.results-place-tile').fadeIn 'slow'
                 # add pagination
                 status.hide()
                 return
@@ -88,6 +87,7 @@ do ($ = jQuery) ->
             description += " &middot; "
             description += "#{node.numBedroom} bedroom"
         $("div#results_description_#{id}").html description
+        $("div#results_place_#{id}").show()
         return
 
     return

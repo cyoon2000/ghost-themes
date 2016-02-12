@@ -57,7 +57,6 @@
             node.guests = guests;
             render_results_tile(i, node);
           }
-          $('div.results-place-tile').fadeIn('slow');
           status.hide();
         },
         error: function(rsp) {
@@ -83,6 +82,7 @@
         description += node.numBedroom + " bedroom";
       }
       $("div#results_description_" + id).html(description);
+      $("div#results_place_" + id).show();
     };
   })(jQuery);
 

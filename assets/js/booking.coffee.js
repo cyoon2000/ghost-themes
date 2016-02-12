@@ -73,6 +73,9 @@
       $("div#results_price_" + id).html("$" + node.price);
       sleep_detail_url = "/sleep-detail/?id=" + node.id + "&from_d=" + node.from_d + "&to_d=" + node.to_d + "&guests=" + node.guests;
       $("a#results_img_anchor_" + id).attr('href', sleep_detail_url);
+      if (node.beachFront) {
+        $("a#results_img_anchor_" + id).append("<div class='beachfront-icon'></div>");
+      }
       $("a#results_title_anchor_" + id).attr('href', sleep_detail_url);
       description = node.propertyType || "Secret";
       if (node.numBedroom) {

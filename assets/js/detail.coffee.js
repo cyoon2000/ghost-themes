@@ -58,7 +58,7 @@
       $('div.booking-summary span.period').html(days + " nights");
       subtotal = node.price * days;
       $('div.booking-subtotal span.subtotal').html("$" + subtotal);
-      total = subtotal + (node.fee || 30);
+      total = subtotal;
       $('div.booking-total span.total').html("$" + total);
     };
     fetch_detail = function(url, params) {

@@ -38,9 +38,7 @@
       }
       from_d = $('input#from_date').val();
       to_d = $('input#to_date').val();
-      console.log("from " + from_d + " to " + to_d);
       guests = $('select#guests').val();
-      console.log(guests);
       search_url = _config.search_url + "?from=" + from_d + "&to=" + to_d + "&guests=" + guests + "&token=";
       console.log(search_url);
       $.ajax({
@@ -54,6 +52,9 @@
           console.log("rsp[" + rsp.length + "]");
           for (i = j = 0, len = rsp.length; j < len; i = ++j) {
             node = rsp[i];
+            node.from_d = from_d;
+            node.to_d = to_d;
+            node.guests = guests;
             render_results_tile(i, node);
           }
           $('div.results-place-tile').fadeIn('slow');
@@ -65,13 +66,14 @@
       });
     };
     render_results_tile = function(id, node, callback) {
-      var description, img;
+      var description, img, sleep_detail_url;
       img = window.is_retina() ? node.profilePhoto.thumbUrl2x : node.profilePhoto.thumbUrl || "http://placehold.it/400x300";
       $("img#results_img_" + id).attr('src', img);
       $("h4#results_title_" + id).html(node.title);
       $("div#results_price_" + id).html("$" + node.price);
-      $("a#results_img_anchor_" + id).attr('href', "/sleep-detail/?id=" + node.id);
-      $("a#results_title_anchor_" + id).attr('href', "/sleep-detail/?id=" + node.id);
+      sleep_detail_url = "/sleep-detail/?id=" + node.id + "&from_d=" + node.from_d + "&to_d=" + node.to_d + "&guests=" + node.guests;
+      $("a#results_img_anchor_" + id).attr('href', sleep_detail_url);
+      $("a#results_title_anchor_" + id).attr('href', sleep_detail_url);
       description = node.propertyType || "Secret";
       if (node.numBedroom) {
         description += " &middot; ";

@@ -43,10 +43,7 @@ do ($ = jQuery) ->
         from_d = $('input#from_date').val()
         to_d = $('input#to_date').val()
  
-        console.log "from #{from_d} to #{to_d}"
-
         guests = $('select#guests').val()
-        console.log guests
 
         # search
         search_url = "#{_config.search_url}?from=#{from_d}&to=#{to_d}&guests=#{guests}&token="
@@ -61,6 +58,9 @@ do ($ = jQuery) ->
                 # dom
                 console.log "rsp[#{rsp.length}]"
                 for node,i in rsp
+                    node.from_d = from_d
+                    node.to_d = to_d
+                    node.guests = guests
                     render_results_tile i, node
                 $('div.results-place-tile').fadeIn 'slow'
                 # add pagination
@@ -77,9 +77,9 @@ do ($ = jQuery) ->
         $("img#results_img_#{id}").attr 'src', img
         $("h4#results_title_#{id}").html node.title
         $("div#results_price_#{id}").html "$#{node.price}"
-        # placeholder id
-        $("a#results_img_anchor_#{id}").attr 'href', "/sleep-detail/?id=#{node.id}"
-        $("a#results_title_anchor_#{id}").attr 'href', "/sleep-detail/?id=#{node.id}"
+        sleep_detail_url = "/sleep-detail/?id=#{node.id}&from_d=#{node.from_d}&to_d=#{node.to_d}&guests=#{node.guests}"
+        $("a#results_img_anchor_#{id}").attr 'href', sleep_detail_url
+        $("a#results_title_anchor_#{id}").attr 'href', sleep_detail_url
         description = node.propertyType or "Secret"
         if node.numBedroom
             description += " &middot; "

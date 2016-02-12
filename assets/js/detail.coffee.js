@@ -89,6 +89,7 @@
       header_image = window.is_retina() ? data.profilePhoto.photoUrl2x : data.profilePhoto.photoUrl;
       $('div.detail-header').css('background-image', "url(" + header_image + ")");
       $('div.detail-place-location').html((data != null ? data.region : void 0) || "Baja, Mexico");
+      $('div.detail-place-icon-list span.number-bedrooms').html("" + data.numBedroom);
       $('div.detail-description').html(data.description);
       $('div.detail-space li.accomodates').html("Accomodates <span>" + data.capacity + "</span>");
       $('div.detail-space li.bedrooms').html("Bedrooms <span>" + data.numBedroom + "</span>");

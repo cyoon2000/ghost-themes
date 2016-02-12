@@ -140,6 +140,22 @@ div.results-place-tile {
         width: 4.5em;
         z-index: 100;
     }
+    div.beachfront-icon {
+        @include border-radius(5em);
+        background-color: #ccc;
+        bottom: 55px;
+        right: 30px;
+        position: absolute;
+        height: 5em;
+        width: 5em;
+        z-index: 99;
+        @include background-image(
+            'icons/thumbnail-sleep-badge-beachfront.png',
+            'icons/thumbnail-sleep-badge-beachfront@2x.png',
+            'icons/thumbnail-sleep-badge-beachfront@3x.svg',
+            $size:100% 5em);
+    }
+
     h4 { @extend .results-width; }
     a.results-anchor {
         background-color: #fff;

@@ -15,9 +15,10 @@
               <div class="col-lg-10 col-md-10">
                 <h1>SLEEP</h1>
                 <div class="spacer-below-header"></div>
+                <div class="clearfix visible-xs-block spacer-below-header-xs-only"></div>
                 <div class="center-block booking-search-container">
                   <form id="booking_search" class="form-inline">
-                    <div class="form-group">
+                    <div class="form-group form-group-from">
                       <label for="from_date" class="sr-only">From</label>
                       <div class="input-group date" data-provide="datepicker">
                         <input id="from_date" type="text" class="form-control" placeholder="Check In" data-date-format="mm/dd/yyyy"/>
@@ -25,6 +26,8 @@
                           <span class="glyphicon glyphicon-th"></span>
                         </div>
                       </div>
+                    </div>
+                    <div class="form-group form-group-to">
                       <label for="to_date" class="sr-only">To</label>
                       <div class="input-group date" data-provide="datepicker">
                         <input id="to_date" type="text" placeholder="Check Out" class="form-control" />
@@ -33,7 +36,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group form-group-guests">
                       <select id="guests" class="form-control">
                         <option value="1">1 Guest</option>
                         <option value="2">2 Guests</option>
@@ -43,7 +46,7 @@
                         <option value="6">6+ Guests</option>
                       </select>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group form-group-button">
                       <button id="btn_search" type="button" class="btn btn-info btn-search">Search</button>
                     </div>
                   </form>
@@ -59,6 +62,7 @@
         <div class="clearfix spacer-below-status"></div>
         <section class="map">
         </section>
+        <div class="visible-xs-block spacer-above-results-xs-only"></div>
         <section class="results">
           <div class="container-fluid results-container">
             <div class="row results-row">

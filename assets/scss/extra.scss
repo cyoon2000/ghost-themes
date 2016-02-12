@@ -102,6 +102,7 @@ sleep/booking
         text-align: center;
     }
     .spacer-below-header { @include spacer(1.3em); }
+    .spacer-below-header-xs-only { @include spacer(4em); }
 }
 
 .sharp-border-radius { @include border-radius(0px) }
@@ -109,14 +110,17 @@ sleep/booking
 .booking-search-container { @extend .booking-search-width }
 form#booking_search {
     @extend .booking-search-width;
+    .form-group-from, .form-group-to { width: 33%;}
+    .form-group-button { width: 17%;}
     input { @extend .sharp-border-radius }
-    button { @extend .sharp-border-radius }
+    button { @extend .sharp-border-radius; width: 100%; }
     div.input-group-addon { @extend .sharp-border-radius }
     select { @extend .sharp-border-radius; -webkit-appearance: none; }
     button.btn-search { background-color: $baby_blue; border-color: $baby_blue; }
 }
 div.spacer-below-status { @include spacer(1.3em); }
 .results-width { width:100%; }
+div.spacer-above-results-xs-only { @include spacer(13em); }
 div.results-place-tile {
     display:none;
     img { @extend .results-width; }
@@ -188,7 +192,7 @@ div.detail-summary {
     div.spacer-below-icons { @include spacer(100px);}
     div.detail-booking-container {
 
-        @include debug-border;
+        border: 1px solid #ccc;
         background-color: #fff;
     }
     div.detail-booking-container-container {
@@ -196,16 +200,16 @@ div.detail-summary {
         font-size: 11pt;
         div.booking-price { font-size:16pt; font-weight: 700 }
         div.booking-period { color: #888; }
-        button { @extend .sharp-border-radius; width: 100%; }
+        input { @extend .sharp-border-radius }
+        button { @extend .sharp-border-radius; font-size: 14pt; font-weight: 700; width: 100%; }
 
         div.spacer-between { @include spacer(1em); }
         div.spacer-between-totals { @include spacer(1.1em); border-bottom: 1px solid #ccc; }
-        div.booking-summary-last-line { margin-top: 1em; }
     }
     div.detail-booking-container {
         position: relative;
         bottom: 20%;
-        @include debug-border;
+        border: 1px solid #ccc;
         z-index: 100;
     }
 

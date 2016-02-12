@@ -105,6 +105,9 @@ do ($ = jQuery) ->
         # update summary
         $('div.detail-place-location').html (data?.region or "Baja, Mexico")
 
+        # update bedrooms
+        $('div.detail-place-icon-list span.number-bedrooms').html "#{data.numBedroom}"
+
         # update description
         $('div.detail-description').html data.description
 

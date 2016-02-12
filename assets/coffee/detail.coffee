@@ -107,6 +107,8 @@ do ($ = jQuery) ->
 
         # update bedrooms
         $('div.detail-place-icon-list span.number-bedrooms').html "#{data.numBedroom}"
+        # update capacity
+        $('div.detail-place-icon-list span.number-guests').html "#{data.capacity}"
 
         # update description
         $('div.detail-description').html data.description

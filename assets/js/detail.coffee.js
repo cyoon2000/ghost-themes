@@ -90,6 +90,7 @@
       $('div.detail-header').css('background-image', "url(" + header_image + ")");
       $('div.detail-place-location').html((data != null ? data.region : void 0) || "Baja, Mexico");
       $('div.detail-place-icon-list span.number-bedrooms').html("" + data.numBedroom);
+      $('div.detail-place-icon-list span.number-guests').html("" + data.capacity);
       $('div.detail-description').html(data.description);
       $('div.detail-space li.accomodates').html("Accomodates <span>" + data.capacity + "</span>");
       $('div.detail-space li.bedrooms').html("Bedrooms <span>" + data.numBedroom + "</span>");

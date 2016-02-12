@@ -64,7 +64,7 @@ do ($ = jQuery) ->
         subtotal = node.price * days
         $('div.booking-subtotal span.subtotal').html "$#{subtotal}"
         # arbitrary fee for now
-        total = subtotal + (node.fee or 30)
+        total = subtotal
         $('div.booking-total span.total').html "$#{total}"
 
         return

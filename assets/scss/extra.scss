@@ -307,3 +307,14 @@ div.detail-meat {
 
 }
 div.spacer-between-photos { @include spacer(0.3em); }
+/* booking modal */
+div.booking-modal-container {
+    .booking-modal-headers { font-size: 12pt; height: 2em; font-weight: 700; }
+    .booking-modal-summary {
+        color:#888;
+        span { color: rgb(51,51,51) }
+    }
+    div.spacer-below-booking-modal-summary { @include spacer(7em); }
+    button { @extend .sharp-border-radius }
+
+}

@@ -8,11 +8,13 @@ do(global = window, $ = jQuery) ->
         'DEV':
             base_url:'https://dl.dropboxusercontent.com/u/122147773/',
             search_url: '//localhost:2368/assets/js/faker.js',
-            detail_url: '//localhost:2368/assets/js/faker-detail.js'
+            detail_url: '//localhost:2368/assets/js/faker-detail.js',
+            stripe_publishable_key:'pk_test_5oVkLLs6UVg1QUTYEAwoOnw3'
         'PROD':
             base_url:'https://dl.dropboxusercontent.com/u/122147773/',
             search_url: 'https://dl.dropboxusercontent.com/u/122147773/showcase/json/searchResult.json',
-            detail_url: 'https://dl.dropboxusercontent.com/u/122147773/showcase/json/searchResultDetail.json'
+            detail_url: 'https://dl.dropboxusercontent.com/u/122147773/showcase/json/searchResultDetail.json',
+            stripe_publishable_key:'pk_test_5oVkLLs6UVg1QUTYEAwoOnw3'
 
     global._env = env
     global._config = config[env]

@@ -1,6 +1,6 @@
 (function() {
   (function($) {
-    var daydiff, detail, fetch_detail, render_detail, render_photos, update_total;
+    var daydiff, detail, fetch_detail, render_detail, render_photos, stripe_response_handler, update_modal, update_total;
     detail = detail || {};
     $(document).ready(function() {
       var detail_url, j, len, prop, ref, ref1, ref2, ref3;
@@ -28,7 +28,32 @@
         console.log('changing');
         update_total($('input#from_date').val(), $('input#to_date').val(), detail.booking);
       });
+      $('button#btn_search').bind('click', function(e) {
+        update_modal(detail.active);
+      });
+      if (Stripe) {
+        Stripe.setPublishableKey(_config.stripe_publishable_key);
+        $('div.booking-modal-container form#payment-form').submit(function(e) {
+          var $form;
+          $form = $(this);
+          $('div.booking-modal-container button.button-booking-modal-book').prop('disabled', true);
+          Stripe.card.createToken($form, stripe_response_handler);
+          return false;
+        });
+      }
     });
+    stripe_response_handler = function(status, rsp) {
+      var $form, token;
+      $form = $('div.booking-modal-container form#payment-form');
+      if (rsp.error) {
+        $('div.booking-modal-container span.payment_errors').html(rsp.error.message);
+        $form.prop('disabled', false);
+        return;
+      }
+      token = rsp.id;
+      $form.append("<input type='hidden' name='stripeToken' value='" + token + "' />");
+      console.log(rsp);
+    };
     daydiff = function(from_date, to_date) {
       var day, from_, to_;
       if (!from_date) {
@@ -60,6 +85,17 @@
       $('div.booking-subtotal span.subtotal').html("$" + subtotal);
       total = subtotal;
       $('div.booking-total span.total').html("$" + total);
+      detail.active = detail.active || {};
+      detail.active.total = total;
+      detail.active.price = node.price;
+      detail.active.days = days;
+      detail.active.from_d = from_date;
+      detail.active.to_d = to_date;
+    };
+    update_modal = function(params, callback) {
+      $('h4#booking-modal-label').html(detail.booking.title.toUpperCase());
+      $('div.booking-modal-dates').html("From " + params.from_d + " to " + params.to_d);
+      $('div.booking-modal-summary').html("For " + params.days + " days x $" + params.price + " = <span>$" + params.total + "</span>");
     };
     fetch_detail = function(url, params) {
       $.ajax({

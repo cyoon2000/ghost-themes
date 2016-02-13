@@ -31,6 +31,35 @@ do ($ = jQuery) ->
             console.log 'changing'
             update_total $('input#from_date').val(), $('input#to_date').val(), detail.booking
             return
+
+        # bind modal with updates
+        $('button#btn_search').bind 'click', (e)->
+            update_modal detail.active
+            return
+
+        # stripe
+        if Stripe
+            Stripe.setPublishableKey(_config.stripe_publishable_key)
+            $('div.booking-modal-container form#payment-form').submit (e)->
+                $form = $(this)
+                $('div.booking-modal-container button.button-booking-modal-book').prop 'disabled', true
+                Stripe.card.createToken $form, stripe_response_handler
+                return false
+
+        return
+
+    stripe_response_handler = (status, rsp)->
+        $form = $('div.booking-modal-container form#payment-form')
+        if rsp.error
+            $('div.booking-modal-container span.payment_errors').html rsp.error.message
+            $form.prop 'disabled', false
+            return
+
+        token = rsp.id
+        $form.append "<input type='hidden' name='stripeToken' value='#{token}' />"
+        console.log rsp
+        # placeholder for now
+        # $form.get(0).submit()
         return
 
     daydiff = (from_date, to_date)->
@@ -66,7 +95,19 @@ do ($ = jQuery) ->
         # arbitrary fee for now
         total = subtotal
         $('div.booking-total span.total').html "$#{total}"
+        detail.active = detail.active or {}
+        detail.active.total = total
+        detail.active.price = node.price
+        detail.active.days = days
+        detail.active.from_d = from_date
+        detail.active.to_d = to_date
 
+        return
+
+    update_modal = (params, callback)->
+        $('h4#booking-modal-label').html detail.booking.title.toUpperCase()
+        $('div.booking-modal-dates').html "From #{params.from_d} to #{params.to_d}"
+        $('div.booking-modal-summary').html "For #{params.days} days x $#{params.price} = <span>$#{params.total}</span>"
         return
 
     fetch_detail = (url, params)->
@@ -107,6 +148,8 @@ do ($ = jQuery) ->
 
         # update bedrooms
         $('div.detail-place-icon-list span.number-bedrooms').html "#{data.numBedroom}"
+        # update capacity
+        $('div.detail-place-icon-list span.number-guests').html "#{data.capacity}"
 
         # update description
         $('div.detail-description').html data.description

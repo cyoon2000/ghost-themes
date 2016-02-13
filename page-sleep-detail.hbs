@@ -38,7 +38,7 @@
                     <span></span>
                   </div>
                   <div class="icon-title">
-                    2 GUESTS
+                    <span class="number-guests">2</span> GUESTS
                   </div>
                 </div>
                 <div class="icon-group icon-bedrooms-group pull-left">
@@ -115,7 +115,7 @@
                   <div class="spacer-between"></div>
                   <div class="row thin-gutters">
                     <div class="col-sm-12">
-                      <button id="btn_search" type="button" class="btn btn-info btn-search">Book</button>
+                      <button id="btn_search" type="button" class="btn btn-info btn-search" data-target="#booking_modal_container" data-toggle="modal">Book</button>
                     </div>
                   </div>
                   <div class="spacer-between"></div>
@@ -170,11 +170,15 @@
                   <div class="col-sm-12 spacer-below-amenities"></div>
               </div>
               <div class="container-fluid detail-prices">
-                <div class="col-sm-3 detail-prices-leader"><ul class="list-group"><li class="list-group-item">Prices</li></ul></div>
-                  <div class="col-sm-9 detail-prices-text">
-                      <ul class="list-group detail-prices-list">
-                      </ul>
-                  </div>
+                <div class="col-sm-3 detail-prices-leader">
+                  <ul class="list-group">
+                    <li class="list-group-item">Prices</li>
+                  </ul>
+                </div>
+                <div class="col-sm-9 detail-prices-text">
+                  <ul class="list-group detail-prices-list">
+                  </ul>
+                </div>
               </div>
               <div class="detail-gallery">
                 <div class="container-fluid">
@@ -192,8 +196,7 @@
             </div>
           </div>
         </section>
-        <section class="detail-map">
-        </div>
+        <section class="detail-map"></section>
     </div>
     <script type="text/javascript">
       if (typeof jQuery == 'undefined') {
@@ -203,3 +206,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.1/js/bootstrap-datepicker.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.1/css/bootstrap-datepicker3.css">
     <script src="{{asset "js/detail.coffee.js"}}"></script>
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+

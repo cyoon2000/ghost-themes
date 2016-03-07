@@ -110,8 +110,10 @@ sleep/booking
 .booking-search-container { @extend .booking-search-width }
 form#booking_search {
     @extend .booking-search-width;
+    /*
     .form-group-from, .form-group-to { width: 33%;}
     .form-group-button { width: 17%;}
+    */
     input { @extend .sharp-border-radius }
     button { @extend .sharp-border-radius; width: 100%; }
     div.input-group-addon { @extend .sharp-border-radius }
@@ -229,7 +231,7 @@ div.detail-summary {
         z-index: 100;
     }
 
-    div.spacer-below-booking { @include spacer(150px); }
+    div.spacer-below-booking { @include spacer(350px); }
 
 }
 
